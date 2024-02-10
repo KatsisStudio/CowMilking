@@ -1,0 +1,48 @@
+ELEMENTS: FIRE, EARTH, WATER, WOOD, METAL
+
+LIST OF COWS:
+1. /Grazing Cow
+2. /Dragon Cow
+3. /Shortstack Cow
+4. /Fuzzy Cow
+5. /Mommy Cow
+6. /Sleepy Cow
+7. /Itty Bitty Titty Cow
+8. /Dryad Cow
+9. +Cosplayer Cow
+10. /Slime Cow
+11. /Water Cow
+12. +Top Hat Cow
+13. /Overfed Cow
+14. /Small Bull Cow
+15. +Royal Cow
+16. +Miko Cow
+17. +Black Mage Cow
+18. /Hell Cow
+19. /Warlord Cow
+20. /Minotaur Cow
+
+BASIC: Grazing Cow (Small)
+
+FIRE EVOLUTIONS - Body types: Powerful Bodies
+Fire Cow (Normal) -> Hell Cow (Large) -> Dragon Cow(Mega)
+
+EARTH EVOLUTIONS - Body Types: Big Motherly Bodies
+Fuzzy Cow (Normal) -> Mommy Cow (Large) -> Overfed Cow (Mega)
+
+WATER EVOLUTIONS Body Types: Blubbery bodies
+Water Cow (Normal) -> Sleepy Cow (Large) -> Slime Cow (Mega)
+
+WOOD EVOLUTIONS - Body Types: Small Bodies
+Itty Bitty Titty Cow (Normal) -> Shortstack Cow (Medium) -> Dryad Cow (Mega)
+
+METAL EVOLUTIONS - Body Types: Futanari
+Small Bull Cow (Normal) ->Minotaur Cow (Medium) -> Warlord Cow (Mega)
+
+
+QUEST GET COWS
+1. Cosplayer Cow
+2. Miko Cow
+3. Royal Cow
+4. Dark Mage Cow
+5. Top Hat Cow
