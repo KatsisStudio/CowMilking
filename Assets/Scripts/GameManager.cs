@@ -2,6 +2,7 @@
 using CowMilking.SO;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace CowMilking
 {
@@ -27,15 +28,12 @@ namespace CowMilking
         {
             Instance = this;
 
+            SceneManager.LoadScene("CowManager", LoadSceneMode.Additive);
+
             _cam = Camera.main;
 
             _grassCount = _info.BaseGrassAmount;
             _tileLayer = LayerMask.NameToLayer("Tile");
-        }
-
-        private void Start()
-        {
-            UpdateUI();
         }
 
         private void Update()
@@ -71,7 +69,7 @@ namespace CowMilking
             UpdateUI();
         }
 
-        private void UpdateUI()
+        public void UpdateUI()
         {
             UIManager.Instance.SetGrassAmount(_grassCount);
         }

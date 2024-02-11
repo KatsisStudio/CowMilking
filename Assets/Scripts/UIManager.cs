@@ -1,7 +1,9 @@
 ﻿using CowMilking.Character;
 using CowMilking.Character.Player;
 using CowMilking.Map;
+using CowMilking.Persistency;
 using CowMilking.SO;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -23,7 +25,12 @@ namespace CowMilking
         private PlacableInfoPanel _infoPanel;
 
         [SerializeField]
-        private PlacementButton[] _placements;
+        private Transform _buttonsContainer;
+
+        [SerializeField]
+        private GameObject _buttonPrefab;
+
+        private List<PlacementButton> _placements;
 
         private void Awake()
         {
@@ -33,6 +40,19 @@ namespace CowMilking
             {
                 elem.SetActive(false);
             }
+        }
+
+        private void Start()
+        {
+            foreach (var cow in PersistencyManager.Instance.SaveData.OwnedCows)
+            {
+                var go = Instantiate(_buttonPrefab, _buttonsContainer);
+                var pb = go.GetComponent<PlacementButton>();
+                pb.Info = CowManager.Instance.GetCow(cow);
+                _placements.Add(pb);
+            }
+
+            GameManager.Instance.UpdateUI();
         }
 
         public void ShowInfoPanel(ICharacter controller, CowInfo info)

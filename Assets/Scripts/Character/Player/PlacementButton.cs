@@ -6,8 +6,7 @@ namespace CowMilking.Character.Player
 {
     public class PlacementButton : MonoBehaviour
     {
-        [SerializeField]
-        private SpawnableInfo _info;
+        public SpawnableInfo Info { set; private get; }
 
         private Button _button;
 
@@ -18,12 +17,12 @@ namespace CowMilking.Character.Player
 
         public void OnClick()
         {
-            GameManager.Instance.OnObjectSelection(_info);
+            GameManager.Instance.OnObjectSelection(Info);
         }
 
         public void ToggleInteraction(int grassAvailable)
         {
-            _button.interactable = grassAvailable >= _info.Cost;
+            _button.interactable = grassAvailable >= Info.Cost;
         }
     }
 }
