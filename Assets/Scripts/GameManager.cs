@@ -13,12 +13,15 @@ namespace CowMilking
 
         private bool _didGameStart;
 
-        private int _grassCount;
+        private int _grassCount = 5;
 
         private void Awake()
         {
             Instance = this;
+        }
 
+        private void Start()
+        {
             UpdateUI();
         }
 
@@ -61,6 +64,9 @@ namespace CowMilking
                 {
                     var go = Instantiate(_selectedInfo.Prefab, _currentTile.transform.position, Quaternion.identity);
                     _currentTile.TileContent = new(go, _selectedInfo);
+
+                    _grassCount -= _selectedInfo.Cost;
+                    UpdateUI();
                 }
                 _selectedInfo = null;
             }
