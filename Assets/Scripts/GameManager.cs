@@ -1,7 +1,7 @@
 ﻿using CowMilking.Character;
-using CowMilking.Character.Player;
 using CowMilking.SO;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace CowMilking
@@ -79,7 +79,7 @@ namespace CowMilking
 
                     go.GetComponent<ICharacter>().Info = _selectedInfo;
 
-                    _currentTile.TileContent = new(go, _selectedInfo);
+                    _currentTile.TileContent = new(go, _selectedInfo, go.GetComponent<ICharacter>());
 
                     _grassCount -= _selectedInfo.Cost;
                     UpdateUI();
