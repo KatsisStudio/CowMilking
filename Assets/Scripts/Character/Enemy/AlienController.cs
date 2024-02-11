@@ -3,13 +3,11 @@ using UnityEngine;
 
 namespace CowMilking.Character.Enemy
 {
-    public class AlienController : ACharacter
+    public class AlienController : ACharacter<EnemyInfo>
     {
-        public EnemyInfo Info { set; private get; }
+        private ICharacter _target;
 
-        private ACharacter _target;
-
-        protected override int BaseHealth => Info.Health;
+        protected override int BaseHealth => _info.Health;
 
         private Rigidbody2D _rb;
 
@@ -20,14 +18,9 @@ namespace CowMilking.Character.Enemy
             _rb = GetComponent<Rigidbody2D>();
         }
 
-        private void Start()
-        {
-            Init();
-        }
-
         private void FixedUpdate()
         {
-            _rb.velocity = _target == null ? Vector2.left * Info.Speed : Vector2.zero;
+            _rb.velocity = _target == null ? Vector2.left * _info.Speed : Vector2.zero;
         }
 
         private void Update()
@@ -38,7 +31,7 @@ namespace CowMilking.Character.Enemy
                 if (_attackTimer <= 0f)
                 {
                     _target.TakeDamage();
-                    _attackTimer = Info.DelayBetweenAttacks;
+                    _attackTimer = _info.DelayBetweenAttacks;
                 }
             }
         }
@@ -47,9 +40,9 @@ namespace CowMilking.Character.Enemy
         {
             if (collision.CompareTag("Obstacle"))
             {
-                _target = collision.GetComponent<ACharacter>();
+                _target = collision.GetComponent<ICharacter>();
 
-                _attackTimer = Info.DelayBetweenAttacks;
+                _attackTimer = _info.DelayBetweenAttacks;
             }
         }
 
@@ -57,8 +50,8 @@ namespace CowMilking.Character.Enemy
         {
             if (collision.CompareTag("Obstacle"))
             {
-                var other = collision.GetComponent<ACharacter>();
-                if (_target != null && other.GetInstanceID() == _target.GetInstanceID())
+                var other = collision.GetComponent<ICharacter>();
+                if (_target != null && other.ID == _target.ID)
                 {
                     _target = null;
                 }

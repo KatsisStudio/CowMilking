@@ -1,4 +1,6 @@
-﻿using CowMilking.SO;
+﻿using CowMilking.Character;
+using CowMilking.Character.Player;
+using CowMilking.SO;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,16 +10,21 @@ namespace CowMilking
     {
         public static GameManager Instance { private set; get; }
 
+        [SerializeField]
+        private GameInfo _info;
+
         private SpawnableInfo _selectedInfo;
         private Tile _currentTile;
 
         private bool _didGameStart;
 
-        private int _grassCount = 5;
+        private int _grassCount;
 
         private void Awake()
         {
             Instance = this;
+
+            _grassCount = _info.BaseGrassAmount;
         }
 
         private void Start()
@@ -69,6 +76,9 @@ namespace CowMilking
                 if (_currentTile != null && _currentTile.TileContent == null)
                 {
                     var go = Instantiate(_selectedInfo.Prefab, _currentTile.transform.position, Quaternion.identity);
+
+                    go.GetComponent<ICharacter>().Info = _selectedInfo;
+
                     _currentTile.TileContent = new(go, _selectedInfo);
 
                     _grassCount -= _selectedInfo.Cost;
