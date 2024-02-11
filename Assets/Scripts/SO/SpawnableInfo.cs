@@ -6,5 +6,6 @@ namespace CowMilking.SO
     public class SpawnableInfo : ScriptableObject
     {
         public GameObject Prefab;
+        public int Cost;
     }
 }

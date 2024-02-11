@@ -8,19 +8,18 @@ namespace CowMilking
     {
         public static GameManager Instance { private set; get; }
 
-        [SerializeField]
-        private GameObject[] _hiddenUIUntilStart;
-        [SerializeField]
-        private GameObject[] _visibleUIUntilStart;
-
         private SpawnableInfo _selectedInfo;
         private Tile _currentTile;
 
         private bool _didGameStart;
 
+        private int _grassCount;
+
         private void Awake()
         {
             Instance = this;
+
+            UpdateUI();
         }
 
         public void HoverTileEnter(Tile t)
@@ -43,17 +42,15 @@ namespace CowMilking
 
         public void StartGame()
         {
-            foreach (var elem in _hiddenUIUntilStart)
-            {
-                elem.SetActive(true);
-            }
-            foreach (var elem in _visibleUIUntilStart)
-            {
-                elem.SetActive(false);
-            }
+            UIManager.Instance.ToggleGameStartUI();
             _didGameStart = true;
 
             WaveManager.Instance.StartSpawn();
+        }
+
+        private void UpdateUI()
+        {
+            UIManager.Instance.SetGrassAmount(_grassCount);
         }
 
         public void OnClick(InputAction.CallbackContext value)
