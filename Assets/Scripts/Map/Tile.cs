@@ -7,16 +7,6 @@ namespace CowMilking
     public class Tile : MonoBehaviour
     {
         public TileContent TileContent { set; get; }
-
-        private void OnMouseEnter()
-        {
-            GameManager.Instance.HoverTileEnter(this);
-        }
-
-        private void OnMouseExit()
-        {
-            GameManager.Instance.HoverTileExit(this);
-        }
     }
 
     public class TileContent

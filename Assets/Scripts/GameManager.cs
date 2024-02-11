@@ -1,7 +1,6 @@
 ﻿using CowMilking.Character;
 using CowMilking.SO;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace CowMilking
@@ -14,17 +13,24 @@ namespace CowMilking
         private GameInfo _info;
 
         private SpawnableInfo _selectedInfo;
-        private Tile _currentTile;
+        private GameObject _currentTile;
+
+        private Camera _cam;
 
         private bool _didGameStart;
 
         private int _grassCount;
 
+        private int _tileLayer;
+
         private void Awake()
         {
             Instance = this;
 
+            _cam = Camera.main;
+
             _grassCount = _info.BaseGrassAmount;
+            _tileLayer = LayerMask.NameToLayer("Tile");
         }
 
         private void Start()
@@ -32,14 +38,15 @@ namespace CowMilking
             UpdateUI();
         }
 
-        public void HoverTileEnter(Tile t)
+        private void Update()
         {
-            _currentTile = t;
-        }
+            var hit = Physics2D.Raycast(_cam.ScreenToWorldPoint(Mouse.current.position.ReadValue()), Vector2.zero, float.MaxValue, 1 << _tileLayer);
 
-        public void HoverTileExit(Tile t)
-        {
-            if (_currentTile != null && _currentTile.GetInstanceID() == t.GetInstanceID())
+            if (hit.collider != null)
+            {
+                _currentTile = hit.collider.gameObject;
+            }
+            else
             {
                 _currentTile = null;
             }
@@ -73,16 +80,20 @@ namespace CowMilking
         {
             if (value.performed && _selectedInfo != null)
             {
-                if (_currentTile != null && _currentTile.TileContent == null)
+                if (_currentTile != null)
                 {
-                    var go = Instantiate(_selectedInfo.Prefab, _currentTile.transform.position, Quaternion.identity);
+                    var tile = _currentTile.GetComponent<Tile>();
+                    if (tile.TileContent == null)
+                    {
+                        var go = Instantiate(_selectedInfo.Prefab, _currentTile.transform.position, Quaternion.identity);
 
-                    go.GetComponent<ICharacter>().Info = _selectedInfo;
+                        go.GetComponent<ICharacter>().Info = _selectedInfo;
 
-                    _currentTile.TileContent = new(go, _selectedInfo, go.GetComponent<ICharacter>());
+                        tile.TileContent = new(go, _selectedInfo, go.GetComponent<ICharacter>());
 
-                    _grassCount -= _selectedInfo.Cost;
-                    UpdateUI();
+                        _grassCount -= _selectedInfo.Cost;
+                        UpdateUI();
+                    }
                 }
                 _selectedInfo = null;
             }
