@@ -5,6 +5,7 @@ namespace CowMilking.SO
     [CreateAssetMenu(fileName = "CowInfo", menuName = "ScriptableObject/Spawnable/CowInfo")]
     public class CowInfo : SpawnableInfo
     {
+        public string Name;
         public float DelayBetweenSkill;
     }
 }
