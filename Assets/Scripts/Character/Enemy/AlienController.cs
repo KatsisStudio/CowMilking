@@ -1,5 +1,4 @@
-﻿using CowMilking.Character.Player;
-using CowMilking.SO;
+﻿using CowMilking.SO;
 using UnityEngine;
 
 namespace CowMilking.Character.Enemy
@@ -14,9 +13,14 @@ namespace CowMilking.Character.Enemy
 
         private Rigidbody2D _rb;
 
-        protected override void Awake()
+        private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
+        }
+
+        private void Start()
+        {
+            Init();
         }
 
         private void FixedUpdate()

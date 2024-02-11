@@ -51,6 +51,12 @@ namespace CowMilking
             WaveManager.Instance.StartSpawn();
         }
 
+        public void IncreaseGrass(int amount)
+        {
+            _grassCount += amount;
+            UpdateUI();
+        }
+
         private void UpdateUI()
         {
             UIManager.Instance.SetGrassAmount(_grassCount);

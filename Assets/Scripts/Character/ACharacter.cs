@@ -8,7 +8,7 @@ namespace CowMilking.Character
 
         protected abstract int BaseHealth { get; }
 
-        protected virtual void Awake()
+        protected void Init()
         {
             _health = BaseHealth;
         }
