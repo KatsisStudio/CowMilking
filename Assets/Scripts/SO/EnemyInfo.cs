@@ -8,5 +8,7 @@ namespace CowMilking.SO
         public GameObject Prefab;
 
         public float Speed;
+
+        public int Health;
     }
 }

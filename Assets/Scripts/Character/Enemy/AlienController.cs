@@ -1,15 +1,17 @@
 ﻿using CowMilking.SO;
 using UnityEngine;
 
-namespace CowMilking.Enemy
+namespace CowMilking.Character.Enemy
 {
-    public class AlienController : MonoBehaviour
+    public class AlienController : ACharacter
     {
         public EnemyInfo Info { set; private get; }
 
+        protected override int BaseHealth => Info.Health;
+
         private Rigidbody2D _rb;
 
-        private void Awake()
+        protected override void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
         }

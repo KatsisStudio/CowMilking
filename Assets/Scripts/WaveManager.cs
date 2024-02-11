@@ -1,4 +1,4 @@
-﻿using CowMilking.Enemy;
+﻿using CowMilking.Character.Enemy;
 using CowMilking.SO;
 using UnityEngine;
 
