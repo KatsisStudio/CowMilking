@@ -39,9 +39,10 @@ namespace CowMilking
         {
             if (value.performed && _selectedInfo != null)
             {
-                if (_currentTile != null)
+                if (_currentTile != null && _currentTile.TileContent == null)
                 {
-                    Instantiate(_selectedInfo.Prefab, _currentTile.transform.position, Quaternion.identity);
+                    var go = Instantiate(_selectedInfo.Prefab, _currentTile.transform.position, Quaternion.identity);
+                    _currentTile.TileContent = new(go, _selectedInfo);
                 }
                 _selectedInfo = null;
             }
