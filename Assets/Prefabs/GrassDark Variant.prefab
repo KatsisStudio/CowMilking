@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2703358130484175577, guid: 016715da74b3e004f9a406226278b440, type: 3}
       propertyPath: m_Name
-      value: GrassDark
+      value: GrassDark Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2703358130484175579, guid: 016715da74b3e004f9a406226278b440, type: 3}
       propertyPath: m_Color.b
