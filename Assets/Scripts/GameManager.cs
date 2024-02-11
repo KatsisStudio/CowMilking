@@ -52,6 +52,8 @@ namespace CowMilking
                 elem.SetActive(false);
             }
             _didGameStart = true;
+
+            WaveManager.Instance.StartSpawn();
         }
 
         public void OnClick(InputAction.CallbackContext value)
