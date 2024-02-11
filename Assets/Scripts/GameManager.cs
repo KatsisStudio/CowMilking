@@ -8,9 +8,15 @@ namespace CowMilking
     {
         public static GameManager Instance { private set; get; }
 
-        private SpawnableInfo _selectedInfo;
+        [SerializeField]
+        private GameObject[] _hiddenUIUntilStart;
+        [SerializeField]
+        private GameObject[] _visibleUIUntilStart;
 
+        private SpawnableInfo _selectedInfo;
         private Tile _currentTile;
+
+        private bool _didGameStart;
 
         private void Awake()
         {
@@ -33,6 +39,19 @@ namespace CowMilking
         public void OnObjectSelection(SpawnableInfo info)
         {
             _selectedInfo = info;
+        }
+
+        public void StartGame()
+        {
+            foreach (var elem in _hiddenUIUntilStart)
+            {
+                elem.SetActive(true);
+            }
+            foreach (var elem in _visibleUIUntilStart)
+            {
+                elem.SetActive(false);
+            }
+            _didGameStart = true;
         }
 
         public void OnClick(InputAction.CallbackContext value)
