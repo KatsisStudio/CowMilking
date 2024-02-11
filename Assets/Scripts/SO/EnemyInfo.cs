@@ -10,5 +10,6 @@ namespace CowMilking.SO
         public float Speed;
 
         public int Health;
+        public float DelayBetweenAttacks;
     }
 }

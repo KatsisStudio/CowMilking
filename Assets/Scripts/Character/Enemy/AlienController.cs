@@ -13,6 +13,8 @@ namespace CowMilking.Character.Enemy
 
         private Rigidbody2D _rb;
 
+        private float _attackTimer;
+
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
@@ -28,11 +30,26 @@ namespace CowMilking.Character.Enemy
             _rb.velocity = _target == null ? Vector2.left * Info.Speed : Vector2.zero;
         }
 
+        private void Update()
+        {
+            if (_target != null)
+            {
+                _attackTimer -= Time.deltaTime;
+                if (_attackTimer <= 0f)
+                {
+                    _target.TakeDamage();
+                    _attackTimer = Info.DelayBetweenAttacks;
+                }
+            }
+        }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.CompareTag("Obstacle"))
             {
                 _target = collision.GetComponent<ACharacter>();
+
+                _attackTimer = Info.DelayBetweenAttacks;
             }
         }
 
