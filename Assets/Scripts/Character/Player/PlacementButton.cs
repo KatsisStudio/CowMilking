@@ -17,11 +17,15 @@ namespace CowMilking.Character.Player
 
         public void OnClick()
         {
-            GameManager.Instance.OnObjectSelection(Info);
+            GameManager.Instance.OnObjectSelection(Info, this);
         }
 
         public void ToggleInteraction(int grassAvailable)
         {
+            if (_button == null)
+            {
+                Awake(); // TODO: I'm a lazy fuck
+            }
             _button.interactable = grassAvailable >= Info.Cost;
         }
     }

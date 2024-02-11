@@ -30,7 +30,7 @@ namespace CowMilking
         [SerializeField]
         private GameObject _buttonPrefab;
 
-        private List<PlacementButton> _placements;
+        private readonly List<PlacementButton> _placements = new();
 
         private void Awake()
         {
@@ -53,6 +53,12 @@ namespace CowMilking
             }
 
             GameManager.Instance.UpdateUI();
+        }
+
+        public void DestroyPlacementButton(PlacementButton b)
+        {
+            _placements.Remove(b);
+            Destroy(b.gameObject);
         }
 
         public void ShowInfoPanel(ICharacter controller, CowInfo info)

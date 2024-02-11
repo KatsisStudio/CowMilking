@@ -1,8 +1,10 @@
 ﻿using CowMilking.Character;
+using CowMilking.Character.Player;
 using CowMilking.SO;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace CowMilking
 {
@@ -13,7 +15,7 @@ namespace CowMilking
         [SerializeField]
         private GameInfo _info;
 
-        private SpawnableInfo _selectedInfo;
+        private SelectedData _selectedData;
         private GameObject _currentTile;
 
         private Camera _cam;
@@ -50,9 +52,9 @@ namespace CowMilking
             }
         }
 
-        public void OnObjectSelection(SpawnableInfo info)
+        public void OnObjectSelection(SpawnableInfo info, PlacementButton button)
         {
-            _selectedInfo = info;
+            _selectedData = new() { Info = info, Button = button };
         }
 
         public void StartGame()
@@ -89,20 +91,28 @@ namespace CowMilking
                             UIManager.Instance.ShowInfoPanel(tile.TileContent.Character, info);
                         }*/
                     }
-                    else if (_selectedInfo != null)
+                    else if (_selectedData != null)
                     {
-                        var go = Instantiate(_selectedInfo.Prefab, _currentTile.transform.position, Quaternion.identity);
+                        var go = Instantiate(_selectedData.Info.Prefab, _currentTile.transform.position, Quaternion.identity);
 
-                        go.GetComponent<ICharacter>().Info = _selectedInfo;
+                        go.GetComponent<ICharacter>().Info = _selectedData.Info;
 
-                        tile.TileContent = new(go, _selectedInfo, go.GetComponent<ICharacter>());
+                        tile.TileContent = new(go, _selectedData.Info, go.GetComponent<ICharacter>());
 
-                        _grassCount -= _selectedInfo.Cost;
+                        _grassCount -= _selectedData.Info.Cost;
                         UpdateUI();
+
+                        UIManager.Instance.DestroyPlacementButton(_selectedData.Button);
                     }
                 }
-                _selectedInfo = null;
+                _selectedData = null;
             }
         }
+    }
+
+    public class SelectedData
+    {
+        public SpawnableInfo Info;
+        public PlacementButton Button;
     }
 }
