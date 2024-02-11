@@ -78,12 +78,20 @@ namespace CowMilking
 
         public void OnClick(InputAction.CallbackContext value)
         {
-            if (value.performed && _selectedInfo != null)
+            if (value.performed)
             {
+                UIManager.Instance.HideInfoPanel();
                 if (_currentTile != null)
                 {
                     var tile = _currentTile.GetComponent<Tile>();
-                    if (tile.TileContent == null)
+                    if (tile.TileContent != null)
+                    {
+                        if (tile.TileContent.Info is CowInfo info)
+                        {
+                            UIManager.Instance.ShowInfoPanel(tile.TileContent.Character, info);
+                        }
+                    }
+                    else if (_selectedInfo != null)
                     {
                         var go = Instantiate(_selectedInfo.Prefab, _currentTile.transform.position, Quaternion.identity);
 

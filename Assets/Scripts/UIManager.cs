@@ -1,4 +1,7 @@
-﻿using CowMilking.Character.Player;
+﻿using CowMilking.Character;
+using CowMilking.Character.Player;
+using CowMilking.Map;
+using CowMilking.SO;
 using TMPro;
 using UnityEngine;
 
@@ -17,6 +20,9 @@ namespace CowMilking
         private TMP_Text _grassCount;
 
         [SerializeField]
+        private PlacableInfoPanel _infoPanel;
+
+        [SerializeField]
         private PlacementButton[] _placements;
 
         private void Awake()
@@ -27,6 +33,17 @@ namespace CowMilking
             {
                 elem.SetActive(false);
             }
+        }
+
+        public void ShowInfoPanel(ICharacter controller, CowInfo info)
+        {
+            _infoPanel.gameObject.SetActive(true);
+            _infoPanel.Init(controller, info);
+        }
+
+        public void HideInfoPanel()
+        {
+            _infoPanel.gameObject.SetActive(false);
         }
 
         public void SetGrassAmount(int value)
