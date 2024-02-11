@@ -80,16 +80,16 @@ namespace CowMilking
         {
             if (value.performed)
             {
-                UIManager.Instance.HideInfoPanel();
+                //UIManager.Instance.HideInfoPanel();
                 if (_currentTile != null)
                 {
                     var tile = _currentTile.GetComponent<Tile>();
                     if (tile.TileContent != null)
                     {
-                        if (tile.TileContent.Info is CowInfo info)
+                        /*if (tile.TileContent.Info is CowInfo info)
                         {
                             UIManager.Instance.ShowInfoPanel(tile.TileContent.Character, info);
-                        }
+                        }*/
                     }
                     else if (_selectedInfo != null)
                     {
