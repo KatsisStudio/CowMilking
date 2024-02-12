@@ -15,6 +15,8 @@ namespace CowMilking
 
         public CowInfo GetCow(string id) => _cowsDicts[id];
 
+        public CowInfo[] AllCows => _cows;
+
         private void Awake()
         {
             Instance = this;

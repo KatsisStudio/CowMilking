@@ -6,7 +6,16 @@ namespace CowMilking.Farm
 {
     public class FarmCowController : MonoBehaviour
     {
-        public CowInfo Info { set; get; }
+        private CowInfo _info;
+        public CowInfo Info
+        {
+            set
+            {
+                _info = value;
+                _sr.sprite = _info.Sprite;
+            }
+            get => _info;
+        }
 
         private Rigidbody2D _rb;
         private SpriteRenderer _sr;
@@ -14,6 +23,8 @@ namespace CowMilking.Farm
         private int _cowLayer;
 
         private Camera _cam;
+
+        public bool IsAllowed { private set; get; }
 
         private void Awake()
         {
@@ -65,12 +76,14 @@ namespace CowMilking.Farm
 
         public void Allow()
         {
+            IsAllowed = true;
             _sr.color = Color.white;
             gameObject.layer = _cowLayer;
         }
 
         public void Disallow()
         {
+            IsAllowed = false;
             _sr.color = Color.gray;
             gameObject.layer = 0;
         }
