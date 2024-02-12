@@ -2,13 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Conversation", menuName = "ScriptableObject/Dialogue/Conversation")]
-public class Conversation : ScriptableObject
+namespace CowMilking.DialogueSystem
 {
-    //Array of dialogues
-    public Dialogue[] dialogues;
+    [CreateAssetMenu(fileName = "New Conversation", menuName = "ScriptableObject/Dialogue/Conversation")]
+    public class Conversation : ScriptableObject
+    {
+        public string leftNameDefault;
+        public string rightNameDefault;
 
+        public Sprite leftSpriteDefault;
+        public Sprite rightSpriteDefault;
+        public Sprite fullCGSpriteDefault;
 
-    //For if we want to expand to allow Dialogue options
-    public Option[] options;
+        //Array of dialogues
+        public Dialogue[] dialogues;
+    }
 }

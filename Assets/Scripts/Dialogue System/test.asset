@@ -12,10 +12,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0267c7d2b651b0a4fab8d762f7eaa549, type: 3}
   m_Name: test
   m_EditorClassIdentifier: 
+  leftNameDefault: 
+  rightNameDefault: Lil' Bessy
+  leftSpriteDefault: {fileID: 21300000, guid: e61bcc28ca1803b4090f398958e034a8, type: 3}
+  rightSpriteDefault: {fileID: 0}
+  fullCGSpriteDefault: {fileID: 0}
   dialogues:
-  - speakerName: 
+  - speakerName: Katsis
+    speakerSprite: {fileID: 21300000, guid: e61bcc28ca1803b4090f398958e034a8, type: 3}
+    onRight: 0
+    fullScreen: 0
+    sentences:
+    - Howdy partner! Thanks for looking at this text appearing on the screen!
+    - You are looking at the text, aren't you?
+    - I worked so hard on it. :(
+    dialogueEvent: {fileID: 0}
+  - speakerName: Lil' Bessy
+    speakerSprite: {fileID: 21300000, guid: 7ed9521e495b5ec4aa06efc737e43f1c, type: 3}
+    onRight: 1
+    fullScreen: 0
+    sentences:
+    - Mooo~
+    dialogueEvent: {fileID: 0}
+  - speakerName: Katsis
+    speakerSprite: {fileID: 21300000, guid: e61bcc28ca1803b4090f398958e034a8, type: 3}
+    onRight: 0
+    fullScreen: 0
+    sentences:
+    - Milking time already?
+    - Well I guess we'd better not waste any time. Lay down Bessy~!
+    dialogueEvent: {fileID: 0}
+  - speakerName: Lil' Bessy
     speakerSprite: {fileID: 0}
     onRight: 0
-    sentences: []
+    fullScreen: 1
+    sentences:
+    - Mooo~ <3
     dialogueEvent: {fileID: 0}
-  options: []
