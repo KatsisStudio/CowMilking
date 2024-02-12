@@ -8,5 +8,6 @@ namespace CowMilking.SO
         public string Key;
         public string Name;
         public float DelayBetweenSkill;
+        public Sprite Sprite;
     }
 }

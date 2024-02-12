@@ -10,6 +10,8 @@ namespace CowMilking.Character.Player
 
         private void Start()
         {
+            GetComponent<SpriteRenderer>().sprite = _info.Sprite;
+            transform.Translate(Vector2.up * .5f);
             StartCoroutine(EatGrass());
         }
 
