@@ -1,12 +1,17 @@
-﻿using System.Collections;
+﻿using CowMilking.SO;
+using System.Collections;
 using UnityEngine;
 
 namespace CowMilking.Farm
 {
     public class FarmCowController : MonoBehaviour
     {
+        public CowInfo Info { set; get; }
+
         private Rigidbody2D _rb;
         private SpriteRenderer _sr;
+
+        private int _cowLayer;
 
         private Camera _cam;
 
@@ -14,6 +19,7 @@ namespace CowMilking.Farm
         {
             _rb = GetComponent<Rigidbody2D>();
             _sr = GetComponent<SpriteRenderer>();
+            _cowLayer = LayerMask.NameToLayer("Cow");
             _cam = Camera.main;
 
             StartCoroutine(WalkAround());
@@ -53,6 +59,18 @@ namespace CowMilking.Farm
 
             if (p.y > bounds.max.y) _rb.velocity = new(_rb.velocity.x, EnsureNegative(_rb.velocity.y));
             else if (p.y < bounds.min.y) _rb.velocity = new(_rb.velocity.x, EnsurePositive(_rb.velocity.y));
+        }
+
+        public void Allow()
+        {
+            _sr.color = Color.white;
+            gameObject.layer = _cowLayer;
+        }
+
+        public void Disallow()
+        {
+            _sr.color = Color.gray;
+            gameObject.layer = 0;
         }
     }
 }

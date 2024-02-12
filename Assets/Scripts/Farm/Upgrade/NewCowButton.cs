@@ -14,6 +14,7 @@ namespace CowMilking.Farm.Upgrade
         private void Awake()
         {
             _button = GetComponent<Button>();
+
             GetComponentInChildren<TMP_Text>().text += $"\nCost: {CostRequirement}";
 
             UpdateUI();

@@ -26,7 +26,19 @@ namespace CowMilking.Farm.Upgrade
 
         public void OnClick()
         {
+            FarmManager.Instance.ClickAction = ClickAction.Upgrade;
 
+            foreach (var c in FarmManager.Instance.Cows)
+            {
+                if (c.Info.IsBaseForm)
+                {
+                    c.Allow();
+                }
+                else
+                {
+                    c.Disallow();
+                }
+            }
         }
     }
 }
