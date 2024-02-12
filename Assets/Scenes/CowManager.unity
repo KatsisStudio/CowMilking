@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cows:
   - {fileID: 11400000, guid: 130a6735b5193cb43b8afc3a5e7c1099, type: 2}
+  - {fileID: 11400000, guid: a35f0bd49c2ff234c9c40a2c08fd06ca, type: 2}
 --- !u!4 &319808844
 Transform:
   m_ObjectHideFlags: 0
