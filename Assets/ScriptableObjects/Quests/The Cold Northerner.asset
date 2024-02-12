@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da49bed9ddeb7f9408956353d3abd5fc, type: 3}
+  m_Name: The Cold Northerner
+  m_EditorClassIdentifier: 
+  questName: The Cold Northerner
+  questDescription: A buyer in the frigid north is looking for a hot beverage to
+    keep him nice and cozy. Mind getting your mits on and harvesting some milk from
+    our fire cows?
+  _goals:
+  - {fileID: 11400000, guid: 18826d78570a6c442a1a85ab47ae6d33, type: 2}
