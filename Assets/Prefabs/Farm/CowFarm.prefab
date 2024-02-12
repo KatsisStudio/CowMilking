@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6677734504004324438}
   - component: {fileID: 6677734504004324436}
   - component: {fileID: 6677734504004324435}
+  - component: {fileID: -1675205037090991817}
   m_Layer: 7
   m_Name: CowFarm
   m_TagString: Untagged
@@ -119,3 +120,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb7fe746c5663a40b2ebb73faee4a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &-1675205037090991817
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6677734504004324439}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10, y: 12}
+    newSize: {x: 10, y: 12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10, y: 12}
+  m_EdgeRadius: 0

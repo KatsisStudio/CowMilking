@@ -86,7 +86,7 @@ namespace CowMilking.Farm
                                 var curr = element;
 
                                 var go = Instantiate(_upgradePrefab, _upgradeContainer);
-                                go.GetComponent<TMP_Text>().text = $"{curr.Element} Potion";
+                                go.GetComponentInChildren<TMP_Text>().text = $"{curr.Element} Potion";
                                 go.GetComponent<Button>().onClick.AddListener(new(() =>
                                 {
                                     _selectedCow.Info = curr;
@@ -95,6 +95,7 @@ namespace CowMilking.Farm
                                 }));
                             }
                             var cancel = Instantiate(_upgradePrefab, _upgradeContainer);
+                            cancel.GetComponentInChildren<TMP_Text>().text = "Cancel";
                             cancel.GetComponent<Button>().onClick.AddListener(new(() =>
                             {
                                 _upgradeContainer.gameObject.SetActive(false);
