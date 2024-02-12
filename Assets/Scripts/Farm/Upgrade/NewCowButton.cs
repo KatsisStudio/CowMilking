@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace CowMilking.Farm.Upgrade
 {
-    public class NewCowButton : MonoBehaviour
+    public class NewCowButton : MonoBehaviour, IUpdatableUI
     {
         private const int CostRequirement = 20;
 

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace CowMilking.Farm.Upgrade
 {
-    public class UpgradeButton : MonoBehaviour
+    public class UpgradeButton : MonoBehaviour, IUpdatableUI
     {
         private Button _button;
 

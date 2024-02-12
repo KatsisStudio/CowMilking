@@ -1,4 +1,4 @@
-﻿using CowMilking.Character.Player;
+﻿using CowMilking.Farm.Upgrade;
 using CowMilking.Persistency;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +13,10 @@ namespace CowMilking.Farm
     public class FarmManager : MonoBehaviour
     {
         public static FarmManager Instance { private set; get; }
+
+        [SerializeField]
+        public GameObject[] _buttons;
+        public IUpdatableUI[] _updatables;
 
         [SerializeField]
         private GameObject _cowPrefab;
@@ -36,6 +40,8 @@ namespace CowMilking.Farm
         {
             Instance = this;
             SceneManager.LoadScene("CowManager", LoadSceneMode.Additive);
+
+            _updatables = _buttons.Select(x => x.GetComponent<IUpdatableUI>()).ToArray();
 
             _cam = Camera.main;
 
@@ -81,7 +87,7 @@ namespace CowMilking.Farm
                                 Destroy(_upgradeContainer.GetChild(i).gameObject);
                             }
 
-                            foreach (var element in CowManager.Instance.AllCows.Where(x => x.Element != ElementType.None && x.IsStartingCow))
+                            foreach (var element in CowManager.Instance.AllCows.Where(x => x.IsStartingCow && PersistencyManager.Instance.SaveData.Potions.ContainsKey(x.Element)))
                             {
                                 var curr = element;
 
@@ -89,9 +95,18 @@ namespace CowMilking.Farm
                                 go.GetComponentInChildren<TMP_Text>().text = $"{curr.Element} Potion";
                                 go.GetComponent<Button>().onClick.AddListener(new(() =>
                                 {
+                                    PersistencyManager.Instance.SaveData.RemovePotion(curr.Element);
+                                    PersistencyManager.Instance.SaveData.OwnedCows.Remove("NEUTRAL");
+                                    PersistencyManager.Instance.SaveData.OwnedCows.Add(curr.Key);
+                                    PersistencyManager.Instance.Save();
                                     _selectedCow.Info = curr;
                                     _upgradeContainer.gameObject.SetActive(false);
                                     ClickAction = ClickAction.None;
+
+                                    foreach (var e in _updatables)
+                                    {
+                                        e.UpdateUI();
+                                    }
                                 }));
                             }
                             var cancel = Instantiate(_upgradePrefab, _upgradeContainer);

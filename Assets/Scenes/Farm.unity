@@ -1027,6 +1027,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88d0c4ebdef42c41aa5f7072b57aa15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _buttons:
+  - {fileID: 39086756}
+  - {fileID: 1193634976}
   _cowPrefab: {fileID: 6677734504004324439, guid: d9e22225f03fb5c41ad6566eb42b5858, type: 3}
   _upgradeContainer: {fileID: 790452683}
   _upgradePrefab: {fileID: 6374639157654459778, guid: cf9d2775d423ba249a055dac86149e79, type: 3}

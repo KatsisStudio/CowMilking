@@ -12,5 +12,12 @@ namespace CowMilking.Persistency
         {
             { ElementType.Fire, 1 }
         };
+
+        public void RemovePotion(ElementType e)
+        {
+            if (!Potions.ContainsKey(e)) return;
+            if (Potions[e] == 1) Potions.Remove(e);
+            else Potions[e]--;
+        }
     }
 }
