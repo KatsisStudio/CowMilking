@@ -30,7 +30,7 @@ namespace CowMilking.Farm.Upgrade
 
             foreach (var c in FarmManager.Instance.Cows)
             {
-                if (c.Info.IsBaseForm)
+                if (c.Info.Element == Character.Player.ElementType.None)
                 {
                     c.Allow();
                 }

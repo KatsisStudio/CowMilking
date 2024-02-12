@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using CowMilking.Character.Player;
+using UnityEngine;
 
 namespace CowMilking.SO
 {
@@ -11,6 +12,7 @@ namespace CowMilking.SO
         public float DelayBetweenSkill;
         public Sprite Sprite;
 
-        public bool IsBaseForm;
+        public ElementType Element;
+        public bool IsStartingCow;
     }
 }
