@@ -1,4 +1,5 @@
 ﻿using CowMilking.Persistency;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,8 @@ namespace CowMilking.Farm
 
         [SerializeField]
         private GameObject _cowPrefab;
+
+        private readonly List<FarmCowController> _cows = new();
 
         private void Awake()
         {
@@ -29,6 +32,8 @@ namespace CowMilking.Farm
         {
             var go = Instantiate(_cowPrefab, Vector2.zero, Quaternion.identity);
             go.GetComponent<SpriteRenderer>().sprite = CowManager.Instance.GetCow(key).Sprite;
+
+            _cows.Add(go.GetComponent<FarmCowController>());
         }
     }
 }

@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &39086756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3389546303658271868, guid: 55bad05ae6895d841acc39ca636b700e, type: 3}
+  m_PrefabInstance: {fileID: 115580394}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &115580394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -133,6 +138,34 @@ PrefabInstance:
     - target: {fileID: 3389546303658271868, guid: 55bad05ae6895d841acc39ca636b700e, type: 3}
       propertyPath: m_Name
       value: Potions
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389546303658271870, guid: 55bad05ae6895d841acc39ca636b700e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389546303658271870, guid: 55bad05ae6895d841acc39ca636b700e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389546303658271870, guid: 55bad05ae6895d841acc39ca636b700e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 115580399}
+    - target: {fileID: 3389546303658271870, guid: 55bad05ae6895d841acc39ca636b700e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389546303658271870, guid: 55bad05ae6895d841acc39ca636b700e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389546303658271870, guid: 55bad05ae6895d841acc39ca636b700e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CowMilking.Farm.Upgrade.UpgradeButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389546303658271870, guid: 55bad05ae6895d841acc39ca636b700e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3389546303658271871, guid: 55bad05ae6895d841acc39ca636b700e, type: 3}
       propertyPath: m_Pivot.x
@@ -229,6 +262,18 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3389546303658271871, guid: 55bad05ae6895d841acc39ca636b700e, type: 3}
   m_PrefabInstance: {fileID: 115580394}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &115580399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39086756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db31b24914c8d24589f475ff96bcdd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &288277932
 GameObject:
   m_ObjectHideFlags: 0

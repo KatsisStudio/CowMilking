@@ -8,7 +8,7 @@ namespace CowMilking.Persistency
         public List<string> OwnedCows { set; get; } = new() { "NEUTRAL", "NEUTRAL", "NEUTRAL" };
         public int Energy { set; get; } = 50;
 
-        public Dictionary<ElementType, int> Elements { set; get; } = new()
+        public Dictionary<ElementType, int> Potions { set; get; } = new()
         {
             { ElementType.Fire, 1 }
         };
