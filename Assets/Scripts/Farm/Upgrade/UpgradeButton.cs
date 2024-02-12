@@ -1,4 +1,5 @@
-﻿using CowMilking.Persistency;
+﻿using CowMilking.Character.Player;
+using CowMilking.Persistency;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,7 +31,7 @@ namespace CowMilking.Farm.Upgrade
 
             foreach (var c in FarmManager.Instance.Cows)
             {
-                if (c.Info.Element == Character.Player.ElementType.None)
+                if (c.Info.Element == ElementType.None)
                 {
                     c.Allow();
                 }

@@ -18,5 +18,5 @@ MonoBehaviour:
   Name: Fire Cow
   DelayBetweenSkill: 2
   Sprite: {fileID: 21300000, guid: e60fd0f0a033acf4bb865019d7bd49aa, type: 3}
-  Element: 0
+  Element: 3
   IsStartingCow: 1
