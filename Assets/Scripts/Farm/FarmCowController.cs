@@ -59,6 +59,8 @@ namespace CowMilking.Farm
 
             if (p.y > bounds.max.y) _rb.velocity = new(_rb.velocity.x, EnsureNegative(_rb.velocity.y));
             else if (p.y < bounds.min.y) _rb.velocity = new(_rb.velocity.x, EnsurePositive(_rb.velocity.y));
+
+            _sr.flipX = _rb.velocity.x > 0f;
         }
 
         public void Allow()
