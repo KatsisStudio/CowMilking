@@ -20,7 +20,12 @@ namespace CowMilking.Character.Player
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            collision.GetComponent<ICharacter>().TakeDamage(_info.Damage);
+            var c = collision.GetComponent<ICharacter>();
+            c.TakeDamage(_info.Damage);
+            if (_info.SlowDuration > 0f)
+            {
+                c.ApplySlow(_info.SlowDuration);
+            }
             Destroy(gameObject);
         }
     }

@@ -104,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -155,6 +155,8 @@ MonoBehaviour:
   _cows:
   - {fileID: 11400000, guid: 130a6735b5193cb43b8afc3a5e7c1099, type: 2}
   - {fileID: 11400000, guid: a35f0bd49c2ff234c9c40a2c08fd06ca, type: 2}
+  - {fileID: 11400000, guid: 63bfdbccaa50ee04eb8fda510496d3c5, type: 2}
+  - {fileID: 11400000, guid: ef0aa4297c19d7a47bc84f62f5c1a064, type: 2}
 --- !u!4 &319808844
 Transform:
   m_ObjectHideFlags: 0
@@ -162,11 +164,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319808842}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 319808844}

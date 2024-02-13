@@ -35,5 +35,8 @@ namespace CowMilking.Character
                 Destroy(gameObject);
             }
         }
+
+        public virtual void ApplySlow(float duration)
+        { }
     }
 }
