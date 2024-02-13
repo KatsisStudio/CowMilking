@@ -13,6 +13,8 @@ namespace CowMilking.Character.Enemy
 
         private float _attackTimer;
 
+        private float _slowTimer;
+
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
@@ -20,7 +22,7 @@ namespace CowMilking.Character.Enemy
 
         private void FixedUpdate()
         {
-            _rb.velocity = _target == null ? Vector2.left * _info.Speed : Vector2.zero;
+            _rb.velocity = _target == null ? (Vector2.left * _info.Speed * (_slowTimer > 0f ? .5f : 1f)) : Vector2.zero;
         }
 
         private void Update()
@@ -33,6 +35,19 @@ namespace CowMilking.Character.Enemy
                     _target.TakeDamage(1);
                     _attackTimer = _info.DelayBetweenAttacks;
                 }
+            }
+
+            if (_slowTimer > 0f)
+            {
+                _slowTimer -= Time.deltaTime;
+            }
+        }
+
+        public override void ApplySlow(float duration)
+        {
+            if (duration > _slowTimer)
+            {
+                _slowTimer = duration;
             }
         }
 

@@ -24,5 +24,7 @@ namespace CowMilking.SO
         public bool FireBullet;
         public int Damage;
         public Color Color;
+        public float DelayBetweenBullets;
+        public float SlowDuration;
     }
 }

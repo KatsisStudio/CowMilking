@@ -8,5 +8,7 @@ namespace CowMilking.Character
         public void TakeDamage(int amount);
 
         public int ID { get; }
+
+        public void ApplySlow(float duration);
     }
 }

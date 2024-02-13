@@ -41,7 +41,7 @@ namespace CowMilking.Character.Player
         {
             while (true)
             {
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(_info.DelayBetweenBullets);
 
                 var go = Instantiate(_bulletPrefab, transform.position, Quaternion.identity);
                 go.GetComponent<Bullet>().Info = _info;
