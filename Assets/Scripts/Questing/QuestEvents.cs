@@ -1,6 +1,9 @@
+using CowMilking.Character.Player;
 using CowMilking.SO;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.ReorderableList.Element_Adder_Menu;
 using UnityEngine;
 
 namespace CowMilking.Questing
@@ -26,6 +29,15 @@ namespace CowMilking.Questing
         {
             if (OnCowMilked != null)
                 OnCowMilked(cowInfo);
+        }
+
+        public delegate void AlienKilled(CowInfo cowInfo);
+        public static event AlienKilled OnAlienKilled;
+
+        public void KilledAnAlien(CowInfo cowInfo)
+        {
+            if (OnAlienKilled != null)
+                OnAlienKilled(cowInfo);
         }
     }
 }
