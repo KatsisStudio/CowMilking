@@ -5,7 +5,7 @@ namespace CowMilking.Persistency
 {
     public class SaveData
     {
-        public List<string> OwnedCows { set; get; } = new() { "NEUTRAL", "NEUTRAL", "NEUTRAL" };
+        public List<string> OwnedCows { set; get; } = new();
         public int Energy { set; get; } = 50;
 
         public Dictionary<ElementType, int> Potions { set; get; } = new()

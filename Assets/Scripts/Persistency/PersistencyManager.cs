@@ -43,6 +43,7 @@ namespace CowMilking.Persistency
                     else
                     {
                         _saveData = new();
+                        _saveData.OwnedCows.AddRange(new[] { "NEUTRAL", "NEUTRAL", "NEUTRAL" }); // Thanks Newtonsoft for being shit
                     }
                 }
                 return _saveData;
@@ -52,12 +53,6 @@ namespace CowMilking.Persistency
         public void Save()
         {
             File.WriteAllText($"{Application.persistentDataPath}/save.bin", Encrypt(JsonConvert.SerializeObject(_saveData)));
-        }
-
-        public void DeleteSaveFolder()
-        {
-            _saveData = new();
-            File.Delete($"{Application.persistentDataPath}/save.bin");
         }
     }
 }
