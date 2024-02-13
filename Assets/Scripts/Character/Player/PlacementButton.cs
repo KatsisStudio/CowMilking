@@ -6,7 +6,7 @@ namespace CowMilking.Character.Player
 {
     public class PlacementButton : MonoBehaviour
     {
-        public SpawnableInfo Info { set; private get; }
+        public SpawnableInfo Info { set; get; }
 
         private Button _button;
 

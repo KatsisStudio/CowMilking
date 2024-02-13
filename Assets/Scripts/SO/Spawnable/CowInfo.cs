@@ -16,8 +16,13 @@ namespace CowMilking.SO
 
         public CowInfo NextCow;
 
-        [Header("Skill Info")]
-        public float DelayBetweenSkill;
+        [Header("Grass")]
+        public bool EatGrass;
+        public float DelayBetweenGrassEating;
+
+        [Header("Bullet")]
+        public bool FireBullet;
         public int Damage;
+        public Color Color;
     }
 }

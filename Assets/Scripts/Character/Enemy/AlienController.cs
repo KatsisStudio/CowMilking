@@ -30,7 +30,7 @@ namespace CowMilking.Character.Enemy
                 _attackTimer -= Time.deltaTime;
                 if (_attackTimer <= 0f)
                 {
-                    _target.TakeDamage();
+                    _target.TakeDamage(1);
                     _attackTimer = _info.DelayBetweenAttacks;
                 }
             }

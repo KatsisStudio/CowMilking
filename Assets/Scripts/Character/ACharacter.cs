@@ -27,9 +27,9 @@ namespace CowMilking.Character
             _health = BaseHealth;
         }
 
-        public void TakeDamage()
+        public void TakeDamage(int amount)
         {
-            _health--;
+            _health -= amount;
             if (_health <= 0)
             {
                 Destroy(gameObject);

@@ -49,6 +49,7 @@ namespace CowMilking
                 var go = Instantiate(_buttonPrefab, _buttonsContainer);
                 var pb = go.GetComponent<PlacementButton>();
                 pb.Info = CowManager.Instance.GetCow(cow);
+                pb.GetComponentInChildren<TMP_Text>().text = ((CowInfo)pb.Info).Name;
                 _placements.Add(pb);
             }
 

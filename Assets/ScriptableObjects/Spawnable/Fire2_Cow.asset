@@ -15,9 +15,13 @@ MonoBehaviour:
   Prefab: {fileID: 3782565947905830346, guid: 50d876a052d45bb42a77ab47c059261f, type: 3}
   Cost: 15
   Key: FIRE_1
-  Name: Fire Cow
-  DelayBetweenSkill: 2
+  Name: Magma Cow
   Sprite: {fileID: 21300000, guid: c248b486c579b7243a6dc3a579b51130, type: 3}
   Element: 3
   IsStartingCow: 1
   NextCow: {fileID: 11400000, guid: ef0aa4297c19d7a47bc84f62f5c1a064, type: 2}
+  EatGrass: 0
+  DelayBetweenGrassEating: 0
+  FireBullet: 1
+  Damage: 1
+  Color: {r: 1, g: 0, b: 0, a: 1}
