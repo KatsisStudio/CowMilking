@@ -42,14 +42,13 @@ namespace CowMilking.Questing
 
         protected virtual void Completed()
         {
-            Debug.Log(questName + " completed!");
             questComplete = true;
             GrantReward();
         }
 
         protected virtual void GrantReward()
         {
-            Debug.Log("Granting reward for quest: " + questName);
+            
         }
     }
 }
