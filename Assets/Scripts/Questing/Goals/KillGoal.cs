@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace CowMilking.Questing
 {
+    [CreateAssetMenu(fileName = "New Kill Goal", menuName = "ScriptableObject/Questing/Kill Goal")]
     public class KillGoal : Goal
     {
         [SerializeField] private int requiredAmount;
