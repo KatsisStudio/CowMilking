@@ -14,5 +14,7 @@ namespace CowMilking.SO
 
         public ElementType Element;
         public bool IsStartingCow;
+
+        public CowInfo NextCow;
     }
 }

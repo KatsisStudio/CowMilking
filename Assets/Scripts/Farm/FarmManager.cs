@@ -1,5 +1,7 @@
-﻿using CowMilking.Farm.Upgrade;
+﻿using CowMilking.Character.Player;
+using CowMilking.Farm.Upgrade;
 using CowMilking.Persistency;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -17,6 +19,9 @@ namespace CowMilking.Farm
         [SerializeField]
         public GameObject[] _buttons;
         public IUpdatableUI[] _updatables;
+
+        [SerializeField]
+        private GameObject _preventButtonInteractions;
 
         [SerializeField]
         private GameObject _cowPrefab;
@@ -65,6 +70,27 @@ namespace CowMilking.Farm
             var fcc = go.GetComponent<FarmCowController>();
             fcc.Info = info;
             Cows.Add(fcc);
+        }
+
+        public void SetMilkingAction()
+        {
+            ClickAction = ClickAction.Milk;
+        }
+
+        private IEnumerator Milk(FarmCowController cow)
+        {
+            _preventButtonInteractions.SetActive(true);
+            cow.IsBeingMilked = true;
+
+            yield return new WaitForSeconds(1f);
+
+            _preventButtonInteractions.SetActive(false);
+            cow.IsBeingMilked = false;
+
+            if (cow.Info.NextCow != null)
+            {
+                cow.Info = cow.Info.NextCow;
+            }
         }
 
         public void OnClick(InputAction.CallbackContext value)
@@ -116,6 +142,10 @@ namespace CowMilking.Farm
                                 _upgradeContainer.gameObject.SetActive(false);
                                 ClickAction = ClickAction.None;
                             }));
+                        }
+                        else if (ClickAction == ClickAction.Milk)
+                        {
+                            StartCoroutine(Milk(_selectedCow));
                         }
                     }
 

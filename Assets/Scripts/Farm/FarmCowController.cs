@@ -26,6 +26,20 @@ namespace CowMilking.Farm
 
         public bool IsAllowed { private set; get; }
 
+        private bool _isBeingMilked;
+        public bool IsBeingMilked
+        {
+            set
+            {
+                _isBeingMilked = value;
+                if (value)
+                {
+                    _rb.velocity = Vector2.zero;
+                }
+            }
+            get => _isBeingMilked;
+        }
+
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
@@ -50,7 +64,10 @@ namespace CowMilking.Farm
         {
             while (true)
             {
-                _rb.velocity = Random.insideUnitCircle.normalized * 1f;
+                if (!_isBeingMilked)
+                {
+                    _rb.velocity = Random.insideUnitCircle.normalized * 1f;
+                }
                 yield return new WaitForSeconds(Random.Range(1f, 3f));
             }
         }
