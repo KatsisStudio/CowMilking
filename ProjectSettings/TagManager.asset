@@ -42,6 +42,12 @@ TagManager:
   - name: Floor
     uniqueID: 2369968367
     locked: 0
+  - name: PropUp
+    uniqueID: 3100014625
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: PropDown
+    uniqueID: 1958762125
     locked: 0

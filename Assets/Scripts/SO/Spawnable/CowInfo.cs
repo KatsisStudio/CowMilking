@@ -9,12 +9,15 @@ namespace CowMilking.SO
         [Header("Cow Stuff")]
         public string Key;
         public string Name;
-        public float DelayBetweenSkill;
         public Sprite Sprite;
 
         public ElementType Element;
         public bool IsStartingCow;
 
         public CowInfo NextCow;
+
+        [Header("Skill Info")]
+        public float DelayBetweenSkill;
+        public int Damage;
     }
 }
