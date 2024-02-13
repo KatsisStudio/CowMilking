@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -31,6 +32,12 @@ namespace CowMilking.Farm
 
         [SerializeField]
         private GameObject _upgradePrefab;
+
+        [SerializeField]
+        private GameObject _milkingPreview;
+
+        [SerializeField]
+        private Transform _milkingCam;
 
         private int _cowLayer;
 
@@ -81,11 +88,14 @@ namespace CowMilking.Farm
         {
             _preventButtonInteractions.SetActive(true);
             cow.IsBeingMilked = true;
+            _milkingPreview.SetActive(true);
+            _milkingCam.transform.position = new(cow.transform.position.x, cow.transform.position.y, _milkingCam.transform.position.z);
 
             yield return new WaitForSeconds(1f);
 
             _preventButtonInteractions.SetActive(false);
             cow.IsBeingMilked = false;
+            _milkingPreview.SetActive(false);
 
             if (cow.Info.NextCow != null)
             {
