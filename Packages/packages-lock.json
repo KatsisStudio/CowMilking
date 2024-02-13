@@ -27,7 +27,7 @@
     },
     "com.unity.2d.common": {
       "version": "8.0.2",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.2d.sprite": "1.0.0",
@@ -47,7 +47,7 @@
     },
     "com.unity.2d.psdimporter": {
       "version": "8.0.4",
-      "depth": 1,
+      "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.2d.animation": "9.1.0",
