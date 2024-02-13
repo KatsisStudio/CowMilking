@@ -15,6 +15,14 @@ namespace CowMilking.Questing
         public bool questComplete { protected set; get; }
 
         [SerializeField] private Goal[] _goals;
+        
+        [System.Serializable] class QuestRewards 
+        {
+            public Rewards reward;
+            public int amount;
+        }
+
+        [SerializeField] private QuestRewards[] _questRewards;
 
         public virtual void Initialize()
         {
@@ -48,7 +56,26 @@ namespace CowMilking.Questing
 
         protected virtual void GrantReward()
         {
-            
+            foreach(QuestRewards qr in _questRewards)
+            {
+                switch(qr.reward)
+                {
+                    case Rewards.Energy:
+                        break;
+                    case Rewards.Cow:
+                        break;
+                    case Rewards.FirePotion:
+                        break;
+                    case Rewards.WaterPotion:
+                        break;
+                    case Rewards.EarthPotion:
+                        break;
+                    case Rewards.WoodPotion:
+                        break;
+                    case Rewards.MetalPotion:
+                        break;
+                }
+            }
         }
     }
 }
