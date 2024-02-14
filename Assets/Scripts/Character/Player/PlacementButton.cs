@@ -8,12 +8,14 @@ namespace CowMilking.Character.Player
     {
         public SpawnableInfo Info { set; get; }
 
+        [SerializeField]
         private Button _button;
 
-        private void Awake()
-        {
-            _button = GetComponent<Button>();
-        }
+        [SerializeField]
+        private Transform _container;
+
+        [SerializeField]
+        private GameObject _buttonPrefab;
 
         public void OnClick()
         {
@@ -22,10 +24,6 @@ namespace CowMilking.Character.Player
 
         public void ToggleInteraction(int grassAvailable)
         {
-            if (_button == null)
-            {
-                Awake(); // TODO: I'm a lazy fuck
-            }
             _button.interactable = grassAvailable >= Info.Cost;
         }
     }
