@@ -15,6 +15,13 @@ namespace CowMilking.Character.Enemy
 
         private float _slowTimer;
 
+        protected override void Init()
+        {
+            base.Init();
+
+            GetComponent<SpriteRenderer>().sprite = _info.Sprite;
+        }
+
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();

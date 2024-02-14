@@ -22,7 +22,7 @@ namespace CowMilking.Character
 
         protected abstract int BaseHealth { get; }
 
-        protected void Init()
+        protected virtual void Init()
         {
             _health = BaseHealth;
         }
