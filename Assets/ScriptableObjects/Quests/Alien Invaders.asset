@@ -12,6 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da49bed9ddeb7f9408956353d3abd5fc, type: 3}
   m_Name: Alien Invaders
   m_EditorClassIdentifier: 
-  questName: 
-  questDescription: 
-  _goals: []
+  questName: Alien Invaders
+  questDescription: Holy Holstaur! Weird naked aliens are attacking and abducting
+    our cows! I know it ain't what ya signed up for but if you could get rid of those
+    aliens we'd be mighty appreciative!
+  _goals:
+  - {fileID: 11400000, guid: c182f22a64ba7294f88727d9c15b9b2f, type: 2}
+  _questRewards:
+  - reward: 1
+    amount: 3
+  - reward: 0
+    amount: 5
+  - reward: 2
+    amount: 1

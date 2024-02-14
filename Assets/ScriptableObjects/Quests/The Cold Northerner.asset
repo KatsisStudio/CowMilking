@@ -18,3 +18,8 @@ MonoBehaviour:
     our fire cows?
   _goals:
   - {fileID: 11400000, guid: 18826d78570a6c442a1a85ab47ae6d33, type: 2}
+  _questRewards:
+  - reward: 0
+    amount: 5
+  - reward: 3
+    amount: 2

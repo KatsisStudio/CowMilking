@@ -5,5 +5,5 @@ using UnityEngine;
 
 public class QuestLine : MonoBehaviour
 {
-    public Queue<Quest> questLine;
+    public Quest[] questLine;
 }
