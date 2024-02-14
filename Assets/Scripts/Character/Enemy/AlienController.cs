@@ -15,11 +15,14 @@ namespace CowMilking.Character.Enemy
 
         private float _slowTimer;
 
+        protected SpriteRenderer _sr;
+
         protected override void Init()
         {
             base.Init();
 
-            GetComponent<SpriteRenderer>().sprite = _info.Sprite;
+            _sr = GetComponent<SpriteRenderer>();
+            _sr.sprite = _info.Sprite;
         }
 
         private void Awake()

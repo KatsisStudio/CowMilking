@@ -18,7 +18,7 @@ namespace CowMilking.Character
 
         public int ID => GetInstanceID();
 
-        private int _health;
+        protected int _health;
 
         protected abstract int BaseHealth { get; }
 
@@ -27,7 +27,7 @@ namespace CowMilking.Character
             _health = BaseHealth;
         }
 
-        public void TakeDamage(int amount)
+        public virtual void TakeDamage(int amount)
         {
             _health -= amount;
             if (_health <= 0)
