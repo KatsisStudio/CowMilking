@@ -6,5 +6,7 @@ namespace CowMilking.SO
     public class WaveInfo : ScriptableObject
     {
         public EnemyInfo[] Enemies;
+
+        public int EnemyCount;
     }
 }

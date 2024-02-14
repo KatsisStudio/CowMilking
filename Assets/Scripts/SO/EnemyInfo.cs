@@ -13,5 +13,7 @@ namespace CowMilking.SO
 
         public int Health;
         public float DelayBetweenAttacks;
+
+        public int MinDangerReq;
     }
 }

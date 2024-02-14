@@ -17,3 +17,4 @@ MonoBehaviour:
   Speed: 0.8
   Health: 20
   DelayBetweenAttacks: 1
+  MinDangerReq: 15

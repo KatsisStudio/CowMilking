@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 3782565947905830346, guid: 50d876a052d45bb42a77ab47c059261f, type: 3}
   Cost: 5
+  DangerValue: 1
   Key: NEUTRAL
   Name: Grazing Cow
   Sprite: {fileID: 21300000, guid: ccae55811beb3a749a434f0ebf5afb6d, type: 3}
@@ -25,3 +26,5 @@ MonoBehaviour:
   FireBullet: 0
   Damage: 0
   Color: {r: 0, g: 0, b: 0, a: 0}
+  DelayBetweenBullets: 0
+  SlowDuration: 0

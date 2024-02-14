@@ -6,5 +6,6 @@ namespace CowMilking.SO
     {
         public GameObject Prefab;
         public int Cost;
+        public int DangerValue;
     }
 }

@@ -1,5 +1,7 @@
 ﻿using CowMilking.Character.Enemy;
 using CowMilking.SO;
+using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 namespace CowMilking
@@ -17,8 +19,6 @@ namespace CowMilking
         [SerializeField]
         private Transform _enemySpawnPos;
 
-        private int _currWave;
-
         private void Awake()
         {
             Instance = this;
@@ -26,14 +26,28 @@ namespace CowMilking
 
         public void StartSpawn()
         {
-            SpawnNext();
+            StartCoroutine(SpawnWaves());
         }
 
-        private void SpawnNext()
+        private IEnumerator SpawnWaves()
         {
-            var wave = _waves[_currWave];
+            foreach (var w in  _waves)
+            {
+                for (int i = 0; i < w.EnemyCount; i++)
+                {
+                    SpawnNext(w);
 
-            var enemy = wave.Enemies[Random.Range(0, wave.Enemies.Length)];
+                    yield return new WaitForSeconds(3f);
+                }
+
+                yield return new WaitForSeconds(6f);
+            }
+        }
+
+        private void SpawnNext(WaveInfo wave)
+        {
+            var enemies = wave.Enemies.Where(x => CowManager.Instance.AllCows.Sum(c => c.DangerValue) >= x.MinDangerReq).ToArray();
+            var enemy = enemies[Random.Range(0, enemies.Length)];
 
             var line = _lines[Random.Range(0, _lines.Length)];
             var go = Instantiate(enemy.Prefab, new(_enemySpawnPos.position.x, line.position.y), Quaternion.identity);
