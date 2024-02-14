@@ -19,7 +19,7 @@ namespace CowMilking.Character.Player
 
         public void OnClick()
         {
-            GameManager.Instance.OnObjectSelection(_info);
+            GameManager.Instance.OnObjectSelection(_info, this);
         }
 
         public void ToggleInteraction(int grassAvailable)

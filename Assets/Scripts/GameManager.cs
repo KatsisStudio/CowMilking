@@ -14,7 +14,7 @@ namespace CowMilking
         [SerializeField]
         private GameInfo _info;
 
-        private SpawnableInfo _selectedData;
+        private SelectedData _selectedData;
         private GameObject _currentTile;
 
         private Camera _cam;
@@ -51,9 +51,9 @@ namespace CowMilking
             }
         }
 
-        public void OnObjectSelection(SpawnableInfo info)
+        public void OnObjectSelection(SpawnableInfo info, PlacementButton btn)
         {
-            _selectedData = info;
+            _selectedData = new() { Info = info, Button = btn };
         }
 
         public void StartGame()
@@ -92,14 +92,17 @@ namespace CowMilking
                     }
                     else if (_selectedData != null)
                     {
-                        var go = Instantiate(_selectedData.Prefab, _currentTile.transform.position, Quaternion.identity);
+                        var go = Instantiate(_selectedData.Info.Prefab, _currentTile.transform.position, Quaternion.identity);
 
-                        go.GetComponent<ICharacter>().Info = _selectedData;
+                        go.GetComponent<ICharacter>().Info = _selectedData.Info;
 
-                        tile.TileContent = new(go, _selectedData, go.GetComponent<ICharacter>());
+                        tile.TileContent = new(go, _selectedData.Info, go.GetComponent<ICharacter>());
 
-                        _grassCount -= _selectedData.Cost;
+                        _grassCount -= _selectedData.Info.Cost;
                         UpdateUI();
+
+                        UIManager.Instance.RemovePlacementButton(_selectedData.Button);
+                        Destroy(_selectedData.Button.gameObject);
                     }
                 }
                 _selectedData = null;
@@ -110,6 +113,6 @@ namespace CowMilking
     public class SelectedData
     {
         public SpawnableInfo Info;
-        public PlacementDropDown Button;
+        public PlacementButton Button;
     }
 }

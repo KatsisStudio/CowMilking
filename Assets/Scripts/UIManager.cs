@@ -68,6 +68,11 @@ namespace CowMilking
             GameManager.Instance.UpdateUI();
         }
 
+        public void RemovePlacementButton(PlacementButton btn)
+        {
+            _placements.Remove(btn);
+        }
+
         public void ShowInfoPanel(ICharacter controller, CowInfo info)
         {
             _infoPanel.gameObject.SetActive(true);
