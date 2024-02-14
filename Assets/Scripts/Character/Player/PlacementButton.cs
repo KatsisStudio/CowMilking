@@ -1,4 +1,5 @@
 ﻿using CowMilking.SO;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,25 +7,24 @@ namespace CowMilking.Character.Player
 {
     public class PlacementButton : MonoBehaviour
     {
-        public SpawnableInfo Info { set; get; }
-
-        [SerializeField]
+        private CowInfo _info;
         private Button _button;
 
-        [SerializeField]
-        private Transform _container;
-
-        [SerializeField]
-        private GameObject _buttonPrefab;
+        public void Init(CowInfo info)
+        {
+            _info = info;
+            _button = GetComponent<Button>();
+            GetComponentInChildren<TMP_Text>().text = $"{_info.Name}\nCost: {_info.Cost}";
+        }
 
         public void OnClick()
         {
-            GameManager.Instance.OnObjectSelection(Info, this);
+            GameManager.Instance.OnObjectSelection(_info);
         }
 
         public void ToggleInteraction(int grassAvailable)
         {
-            _button.interactable = grassAvailable >= Info.Cost;
+            _button.interactable = grassAvailable >= _info.Cost;
         }
     }
 }

@@ -4614,8 +4614,9 @@ MonoBehaviour:
   - {fileID: 698458637}
   _grassCount: {fileID: 1629793582}
   _infoPanel: {fileID: 985308770}
-  _buttonsContainer: {fileID: 1120261391}
-  _buttonPrefab: {fileID: 8446637094433143876, guid: 9c105379cea7ac74d9e29ff4a952fb87, type: 3}
+  _mainContainer: {fileID: 1120261391}
+  _dropDownPrefab: {fileID: 8446637094433143876, guid: 9c105379cea7ac74d9e29ff4a952fb87, type: 3}
+  _buttonPrefab: {fileID: 440886564677670791, guid: 249381e6788f6b2498a1f8fbc25bddab, type: 3}
 --- !u!1 &1895499576
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,10 +25,10 @@ namespace CowMilking
         private PlacableInfoPanel _infoPanel;
 
         [SerializeField]
-        private Transform _buttonsContainer;
+        private Transform _mainContainer;
 
         [SerializeField]
-        private GameObject _buttonPrefab;
+        private GameObject _dropDownPrefab, _buttonPrefab;
 
         private readonly List<PlacementButton> _placements = new();
 
@@ -44,22 +44,28 @@ namespace CowMilking
 
         private void Start()
         {
+            Dictionary<ElementType, PlacementDropDown> menu = new();
             foreach (var cow in PersistencyManager.Instance.SaveData.OwnedCows)
             {
-                var go = Instantiate(_buttonPrefab, _buttonsContainer);
-                var pb = go.GetComponent<PlacementButton>();
-                pb.Info = CowManager.Instance.GetCow(cow);
-                pb.GetComponentInChildren<TMP_Text>().text = ((CowInfo)pb.Info).Name;
+                var info = CowManager.Instance.GetCow(cow);
+                if (!menu.ContainsKey(info.Element))
+                {
+                    var go = Instantiate(_dropDownPrefab, _mainContainer);
+                    var pdd = go.GetComponent<PlacementDropDown>();
+                    pdd.GetComponentInChildren<TMP_Text>().text = info.Element.ToString();
+
+                    menu.Add(info.Element, pdd);
+                }
+
+                var container = menu[info.Element].Container;
+                var gobtn = Instantiate(_buttonPrefab, container);
+                var pb = gobtn.GetComponent<PlacementButton>();
+                pb.Init(info);
+
                 _placements.Add(pb);
             }
 
             GameManager.Instance.UpdateUI();
-        }
-
-        public void DestroyPlacementButton(PlacementButton b)
-        {
-            _placements.Remove(b);
-            Destroy(b.gameObject);
         }
 
         public void ShowInfoPanel(ICharacter controller, CowInfo info)
