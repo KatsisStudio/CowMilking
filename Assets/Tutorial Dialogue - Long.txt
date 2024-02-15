@@ -1,0 +1,83 @@
+MAIN MENU SCREEN
+>Play
+>>GameLoadsIn
+>>Tutorial
+
+Rancher> Well howdy! You must be the new guy. Pleasure ta make your acquaintance!
+Rancher> To be honest, it's a bit tough finding people who are interested in farming these day.
+Rancher> Not entirely sure why, it's good, honest, rewardin' work!
+Rancher> Before you start though I've got to ask you a few interview questions.
+Rancher> Standard procedure, plus it lets me get to know you a bit better!
+
+Rancher> Let's get started.
+Rancher> Which do you think is better: Attack, or Defense?
+
+<Attack> Fire, Metal
+<Defense> Water, Earth, Wood
+
+Rancher> Which do you prefer working with: Your Hands, or Tools?
+
+<Hands> Earth, Wood
+<Tools> Metal, Water, Fire
+
+Rancher> And finally, do you prefer Cows or Bulls?
+
+Cows> Earth, Fire, Water
+Bulls> Metal, Wood
+
+<Combine elements, choose most or random if equal>
+{Element}
+
+Rancher> And that's it! With that, you are now officially hired.
+Rancher> Welcome to the Milky Way Ranch!
+Rancher> Might as well get you acquainted with the place, come on in!
+
+<Load into Ranch>
+
+Rancher> This is the ranch! Here you can keep an eye on our Cowgirls.
+Or at least, you would if we had any in at the moment. The ones we sent out to
+pasture haven't come back yet.
+Rancher>That's a bit strange, it's almost time fer their milking.
+Rancher> Guess I can show you how to get more to start us off then.
+Rancher> Go ahead and click that {town} over yonder
+
+<Click Buy button to buy a cow>
+
+Rancher> Buying cows takes Energy, which you get back at the beginning of each day.
+Rancher> Another task that also takes Energy, and the main reason you were hired.
+Rancher> Milking!
+Rancher> But maybe I'm getting a little ahead of myself.
+Rancher> These Grazing Cows are a little skinny to give us any good milk.
+Rancher> To fix that, I can make one of Milky Way's patented Element Potions!
+
+Rancher> Here, use this {Element} potion on the Cowgirl. Click our Apothecary, select the potion, and
+feed it to our Cowgirl.
+
+<Feed element potion to cow>
+
+Rancher> Great! Now go ahead and milk her.
+
+Rancher> That's it! Potions not only fill our Cowgirls out a bit and get them ready for milking,
+it also toughens them up!
+Rancher> We might be needing someone working security with these cows too.
+Rancher> Some weirdo's been cutting weird circles in my grazing fields!
+Rancher> Speaking of, lets go there next. We can look for my other girls are.
+
+<Begin main gameplay part, single alien appears>
+
+Rancher> Holy Holstaurs! What is that weird looking thing?
+Rancher> It's heading towards the farm, we have to stop it!
+Rancher> You'll need Grass to bring out our stronger Cowgirls.
+Rancher> Place one down, then when you can get our bigger girls out here.
+
+<Place grazing cow, alien starts walking. Put an element cow in front of it>
+<Once the alien is destroyed,exit back to ranch>
+
+Rancher> That thing was creepy, like some sort of evil alien!
+Rancher> Guess we know what happened to my Cowgirls.
+Rancher> I'll get working on some potions, and leave you to get acquainted with your
+daily duties.
+Rancher> We're probably going to need our Cowgirls in tip-top shape if those aliens come
+back.
+Rancher> It's quite a way to start your first day, but I'm glad you've showed up when you did.
+Rancher> Once again, welcome to the Milky Way Ranch!

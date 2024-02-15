@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b5ccc70081fbf4eb8e48034baa707d, type: 3}
   m_Name: Kill 5 Aliens
   m_EditorClassIdentifier: 
+  goalSummary: Kill Aliens
   requiredAmount: 5
   requiredElement: 0
+  currentAmount: 0

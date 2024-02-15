@@ -16,12 +16,11 @@ MonoBehaviour:
   questDescription: Holy Holstaur! Weird naked aliens are attacking and abducting
     our cows! I know it ain't what ya signed up for but if you could get rid of those
     aliens we'd be mighty appreciative!
+  questComplete: 0
   _goals:
   - {fileID: 11400000, guid: c182f22a64ba7294f88727d9c15b9b2f, type: 2}
-  _questRewards:
-  - reward: 1
-    amount: 3
+  questRewards:
   - reward: 0
     amount: 5
-  - reward: 2
-    amount: 1
+  - reward: 1
+    amount: 2

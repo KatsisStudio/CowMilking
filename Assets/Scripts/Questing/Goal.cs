@@ -1,3 +1,4 @@
+using CowMilking.Character.Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,13 @@ namespace CowMilking.Questing
 {
     public class Goal : ScriptableObject
     {
+        public string goalSummary;
+
+        public int requiredAmount;
+        public ElementType requiredElement;
+
+        public int currentAmount;
+
         public bool completed { protected set; get; }
 
         //Quest i am associated with

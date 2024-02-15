@@ -9,11 +9,6 @@ namespace CowMilking.Questing
     [CreateAssetMenu(fileName = "New Kill Goal", menuName = "ScriptableObject/Questing/Kill Goal")]
     public class KillGoal : Goal
     {
-        [SerializeField] private int requiredAmount;
-        [SerializeField] private ElementType requiredElement;
-
-        private int currentAmount;
-
         public override void Initialize(Quest q)
         {
             Debug.Log("Initializing Milking Goal");

@@ -7,22 +7,22 @@ namespace CowMilking.Questing
     [CreateAssetMenu(fileName = "New Quest", menuName = "ScriptableObject/Questing/Quest")]
     public class Quest : ScriptableObject
     {
-        [SerializeField] protected string questName;
+        public string questName;
 
         [TextArea(5, 25)]
         [SerializeField] protected string questDescription;
 
-        public bool questComplete { protected set; get; }
+        public bool questComplete;
 
-        [SerializeField] private Goal[] _goals;
+        public Goal[] goals;
         
-        [System.Serializable] class QuestRewards 
+        [System.Serializable] public class QuestRewards 
         {
             public Rewards reward;
             public int amount;
         }
 
-        [SerializeField] private QuestRewards[] _questRewards;
+        [SerializeField] public QuestRewards[] questRewards;
 
         public virtual void Initialize()
         {
@@ -30,7 +30,7 @@ namespace CowMilking.Questing
 
             questComplete = false;
 
-            foreach (Goal g in _goals)
+            foreach (Goal g in goals)
             {
                 g.Initialize(this);
             }
@@ -38,7 +38,7 @@ namespace CowMilking.Questing
 
         public void CheckAllGoalsCompleted()
         {
-            foreach (Goal g in _goals)
+            foreach (Goal g in goals)
             {
                 if (!g.completed)
                 {
@@ -56,7 +56,7 @@ namespace CowMilking.Questing
 
         protected virtual void GrantReward()
         {
-            foreach(QuestRewards qr in _questRewards)
+            foreach(QuestRewards qr in questRewards)
             {
                 switch(qr.reward)
                 {
@@ -76,6 +76,11 @@ namespace CowMilking.Questing
                         break;
                 }
             }
+        }
+
+        public string GetQuestDescription()
+        {
+            return questDescription;
         }
     }
 }
