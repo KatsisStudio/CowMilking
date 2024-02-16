@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.IMGUI.Controls;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace CowMilking.DialogueSystem
@@ -16,6 +18,11 @@ namespace CowMilking.DialogueSystem
 
         [SerializeField] private TMP_Text textTop;
         [SerializeField] private TMP_Text textBottom;
+
+        [SerializeField] private Transform optionPanel;
+        [SerializeField] private Button optionButtonReference;
+        
+        private float buttonOffset = 75;
 
         //Placeholder for a transparent image, used to clear the sprites
         [SerializeField] private Image placeholderTransparent;
@@ -41,15 +48,15 @@ namespace CowMilking.DialogueSystem
 
         [SerializeField] float _typingSpeed = 0.05f;
 
-        ////TEST CODE
-        //public Conversation testConvo;
+        //TEST CODE
+        public Conversation testConvo;
 
         private void Awake()
         {
             if (Instance == null)
                 Instance = this;
             else
-                Destroy(this.gameObject);
+                Destroy(this);
 
             ClearAllFields();
 
@@ -57,11 +64,11 @@ namespace CowMilking.DialogueSystem
 
         }
 
-        //private void Start()
-        //{
-        //    //TEST CODE
-        //    StartConversation(testConvo);
-        //}
+        private void Start()
+        {
+            //TEST CODE
+            StartConversation(testConvo);
+        }
 
         private void Update()
         {
@@ -171,18 +178,43 @@ namespace CowMilking.DialogueSystem
 
             if (SentenceQueue.Count <= 0)
             {
-                if (_currentDialogue.dialogueEvent != null)
-                    Instantiate(_currentDialogue.dialogueEvent);
-
                 if (DialogueQueue.Count <= 0)
                 {
-                    ClearAllFields();
+                    if (_currentDialogue.dialogueEvent != null)
+                        Instantiate(_currentDialogue.dialogueEvent);
+
+                    if (_currentConversation.options.Length > 0)
+                        DisplayOptions(); //options always lead to conversations being added to queue
+                    else
+                        ClearAllFields();
                 }
                 else
                 { StartNextDialogue(_currentDialogue = DialogueQueue.Dequeue()); }
             }
             else { StartCoroutine(TypeSentence(_currentSentence = SentenceQueue.Dequeue())); }
             
+        }
+
+        void DisplayOptions()
+        {
+            for(int i = 0; i < _currentConversation.options.Length; i++)
+            {
+                Button optionButton = Instantiate(optionButtonReference, optionPanel);
+                RectTransform rt = optionButton.GetComponent<RectTransform>();
+
+                float offset = (rt.localPosition.y - (buttonOffset * i)) + (buttonOffset * (_currentConversation.options.Length - i));
+
+                rt.localPosition = new Vector2(rt.localPosition.x, offset);
+
+                _currentConversation.options[i].SetupButton(optionButton);
+
+                optionButton.enabled = true;
+            }
+        }
+
+        void SelectOption(Option o)
+        {
+            Debug.Log(o.optionText);
         }
 
         private void ClearAllFields()

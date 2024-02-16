@@ -49,3 +49,8 @@ MonoBehaviour:
     sentences:
     - Mooo~ <3
     dialogueEvent: {fileID: 0}
+  options:
+  - optionText: 
+    conversationPath: {fileID: 0}
+  - optionText: 
+    conversationPath: {fileID: 0}

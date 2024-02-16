@@ -14,5 +14,8 @@ namespace CowMilking.DialogueSystem
 
         //Array of dialogues
         public Dialogue[] dialogues;
+
+        //Option array
+        public Option[] options;
     }
 }
