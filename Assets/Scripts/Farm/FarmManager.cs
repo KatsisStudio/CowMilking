@@ -1,7 +1,7 @@
-﻿using CowMilking.Character.Player;
-using CowMilking.Farm.Upgrade;
+﻿using CowMilking.Farm.Upgrade;
 using CowMilking.Persistency;
 using CowMilking.Questing;
+using CowMilking.SO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -107,6 +107,21 @@ namespace CowMilking.Farm
             QuestEvents.Instance.MilkedACow(cow.Info);
         }
 
+        class CowElementComparer : IEqualityComparer<CowInfo>
+        {
+            public bool Equals(CowInfo x, CowInfo y)
+            {
+                if (ReferenceEquals(x, y)) return true;
+                if (ReferenceEquals(x, null) || ReferenceEquals(y, null)) return false;
+                return x.Element == y.Element;
+            }
+            public int GetHashCode(CowInfo cow)
+            {
+                //Check whether the object is null
+                if (Object.ReferenceEquals(cow, null)) return 0;
+                return cow.Element.GetHashCode();
+            }
+        }
         public void OnClick(InputAction.CallbackContext value)
         {
             if (value.performed && !_upgradeContainer.gameObject.activeInHierarchy)
@@ -127,7 +142,7 @@ namespace CowMilking.Farm
                                 Destroy(_upgradeContainer.GetChild(i).gameObject);
                             }
 
-                            foreach (var element in CowManager.Instance.AllCows.Where(x => x.IsStartingCow && PersistencyManager.Instance.SaveData.Potions.ContainsKey(x.Element)))
+                            foreach (var element in CowManager.Instance.AllCows.Where(x => x.IsStartingCow && PersistencyManager.Instance.SaveData.Potions.ContainsKey(x.Element)).Distinct(new CowElementComparer()))
                             {
                                 var curr = element;
 
