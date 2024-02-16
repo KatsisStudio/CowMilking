@@ -1,6 +1,7 @@
 ﻿using CowMilking.Character.Player;
 using CowMilking.Farm.Upgrade;
 using CowMilking.Persistency;
+using CowMilking.Questing;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,6 +53,7 @@ namespace CowMilking.Farm
         {
             Instance = this;
             SceneManager.LoadScene("CowManager", LoadSceneMode.Additive);
+            SceneManager.LoadScene("QuestLog", LoadSceneMode.Additive);
 
             _updatables = _buttons.Select(x => x.GetComponent<IUpdatableUI>()).ToArray();
 
@@ -101,6 +103,8 @@ namespace CowMilking.Farm
             {
                 cow.Info = cow.Info.NextCow;
             }
+
+            QuestEvents.Instance.MilkedACow(cow.Info);
         }
 
         public void OnClick(InputAction.CallbackContext value)

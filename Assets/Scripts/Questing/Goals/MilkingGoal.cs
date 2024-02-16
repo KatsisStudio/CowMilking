@@ -1,8 +1,6 @@
 using CowMilking.Character.Player;
+using CowMilking.Persistency;
 using CowMilking.SO;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CowMilking.Questing
@@ -10,25 +8,27 @@ namespace CowMilking.Questing
     [CreateAssetMenu(fileName = "New Milking Goal", menuName = "ScriptableObject/Questing/Milking Goal")]
     public class MilkingGoal : Goal
     {
-        public override void Initialize(Quest q)
+        public override void Initialize(Quest q, int id)
         {
             Debug.Log("Initializing Milking Goal");
 
-            base.Initialize(q);
-            currentAmount = 0;
+            base.Initialize(q, id);
 
-            QuestEvents.OnCowMilked += Increment;
+            if (PersistencyManager.Instance.SaveData.GetQuestProgress(quest.questID, goalID) >= requiredAmount)
+                completed = true;
+            else
+                QuestEvents.OnCowMilked += Increment;
         }
 
         void Increment(CowInfo cinfo)
         {
             //If ElementType == none, can milk any cow.
-            if (requiredElement != ElementType.None && cinfo.Element != requiredElement)
+            if (requiredElement != ElementType.None  && cinfo.Element != requiredElement)
                 return;
 
-            currentAmount++;
+            PersistencyManager.Instance.SaveData.UpdateQuestProgress(quest.questID, goalID);
 
-            if (currentAmount >= requiredAmount)
+            if (PersistencyManager.Instance.SaveData.GetQuestProgress(quest.questID, goalID) >= requiredAmount)
                 Complete();
         }
 

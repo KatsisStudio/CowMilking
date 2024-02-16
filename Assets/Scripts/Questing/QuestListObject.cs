@@ -1,6 +1,3 @@
-using CowMilking.Questing;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 

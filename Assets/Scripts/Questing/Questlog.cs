@@ -1,5 +1,4 @@
-using CowMilking.Questing;
-using System.Collections;
+using CowMilking.Persistency;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -8,6 +7,8 @@ namespace CowMilking.Questing
 {
     public class Questlog : MonoBehaviour
     {
+        public static Questlog Instance { private set; get; }
+
         public List<Quest> listOfQuests;
 
         [SerializeField] private Transform contentZone;
@@ -25,11 +26,17 @@ namespace CowMilking.Questing
         int yOffset = -10;
         int questCounter = 0;
 
+        private void Awake()
+        {
+            Instance = this;
+        }
+
         private void Start()
         {
-
             foreach (Quest q in listOfQuests)
             {
+                q.Initialize();
+
                 GameObject lObject = Instantiate(questListObjectRef.listObject, contentZone);
                 QuestListObject qlObject = lObject.GetComponent<QuestListObject>();
 
@@ -48,6 +55,9 @@ namespace CowMilking.Questing
 
                 lObject.SetActive(true);
             }
+
+            this.gameObject.SetActive(false);
+            questInfoPanel.SetActive(false);
         }
 
         public void EnableQuestInfoPanel(Quest q)
@@ -59,9 +69,12 @@ namespace CowMilking.Questing
             questInfoName.text = q.questName;
             questInfoDescription.text = q.GetQuestDescription();
 
-            foreach(Goal g in q.goals)
+            for(int i = 0; i < q.goals.Length; i++)
             {
-                questInfoGoals.text += g.goalSummary + " --- " + g.currentAmount.ToString() + "/" + g.requiredAmount + "\n";
+                var g = q.goals[i];
+                var amount = PersistencyManager.Instance.SaveData.GetQuestProgress(q.questID, g.goalID);
+
+                questInfoGoals.text += g.goalSummary + " --- " + amount.ToString() + "/" + g.requiredAmount + "\n";
             }
 
             foreach (Quest.QuestRewards qr in q.questRewards)
@@ -72,11 +85,11 @@ namespace CowMilking.Questing
 
         public void ExitClick()
         {
-            if (questInfoPanel.activeSelf)
+            if (questInfoPanel.activeInHierarchy)
                 questInfoPanel.SetActive(false);
             else
             {
-                //close the Questlog
+                gameObject.SetActive(false);
             }
         }
     }

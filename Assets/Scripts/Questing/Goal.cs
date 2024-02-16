@@ -1,28 +1,27 @@
 using CowMilking.Character.Player;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace CowMilking.Questing
 {
     public class Goal : ScriptableObject
     {
+        public int goalID { private set; get; }
+
         public string goalSummary;
 
         public int requiredAmount;
         public ElementType requiredElement;
 
-        public int currentAmount;
-
         public bool completed { protected set; get; }
 
         //Quest i am associated with
-        protected Quest _quest;
+        protected Quest quest;
 
-        public virtual void Initialize(Quest q)
+        public virtual void Initialize(Quest q, int id)
         {
             completed = false;
-            _quest = q;
+            quest = q;
+            goalID = id;
         }
 
         public virtual void Complete()
@@ -33,7 +32,7 @@ namespace CowMilking.Questing
             completed = true;
             
             //Check if all quest goals completed
-            _quest.CheckAllGoalsCompleted();
+            quest.CheckAllGoalsCompleted();
         }
 
     }

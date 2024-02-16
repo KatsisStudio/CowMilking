@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CowManager.unity
     guid: 48192e0b904862a4ab918c3b8e2ce650
+  - enabled: 1
+    path: Assets/Scenes/QuestLog.unity
+    guid: 2297b353029dd4f49b11689b59ded7ea
   m_configObjects: {}

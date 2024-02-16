@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace CowMilking.Questing
@@ -7,6 +5,10 @@ namespace CowMilking.Questing
     [CreateAssetMenu(fileName = "New Quest", menuName = "ScriptableObject/Questing/Quest")]
     public class Quest : ScriptableObject
     {
+        private static int key = 0;
+
+        public int questID { private set; get; }
+
         public string questName;
 
         [TextArea(5, 25)]
@@ -26,13 +28,15 @@ namespace CowMilking.Questing
 
         public virtual void Initialize()
         {
-            Debug.Log("Initializing Quest: " + questName);
+
+            questID = key;
+            key++;
 
             questComplete = false;
 
-            foreach (Goal g in goals)
+            for (int i = 0; i < goals.Length; i++)
             {
-                g.Initialize(this);
+                goals[i].Initialize(this, i);
             }
         }
 
@@ -81,6 +85,11 @@ namespace CowMilking.Questing
         public string GetQuestDescription()
         {
             return questDescription;
+        }
+
+        public void SaveQuest()
+        {
+            Quest quest = new Quest();
         }
     }
 }

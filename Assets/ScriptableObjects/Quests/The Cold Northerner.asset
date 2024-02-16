@@ -17,7 +17,7 @@ MonoBehaviour:
     keep him nice and cozy. Mind getting your mits on and harvesting some milk from
     our fire cows?
   questComplete: 0
-  _goals:
+  goals:
   - {fileID: 11400000, guid: 18826d78570a6c442a1a85ab47ae6d33, type: 2}
   questRewards:
   - reward: 0
