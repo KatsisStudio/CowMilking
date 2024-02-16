@@ -17,7 +17,7 @@ MonoBehaviour:
   DangerValue: 1
   Key: NEUTRAL
   Name: Grazing Cow
-  Sprite: {fileID: 21300000, guid: ccae55811beb3a749a434f0ebf5afb6d, type: 3}
+  Sprite: {fileID: 21300000, guid: db5f4dad87d6e7f439f0fed115445a47, type: 3}
   Element: 0
   IsStartingCow: 1
   NextCow: {fileID: 0}
