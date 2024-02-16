@@ -50,7 +50,7 @@ MonoBehaviour:
     - Mooo~ <3
     dialogueEvent: {fileID: 0}
   options:
-  - optionText: 
-    conversationPath: {fileID: 0}
-  - optionText: 
-    conversationPath: {fileID: 0}
+  - optionText: One
+    conversationPath: {fileID: 11400000, guid: 0ddcf7976a6e2104890ca114340d1069, type: 2}
+  - optionText: Two
+    conversationPath: {fileID: 11400000, guid: ecfb3dcb95d40a04c805232b4d3e65da, type: 2}

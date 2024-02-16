@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.IMGUI.Controls;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace CowMilking.DialogueSystem
@@ -20,7 +18,9 @@ namespace CowMilking.DialogueSystem
         [SerializeField] private TMP_Text textBottom;
 
         [SerializeField] private Transform optionPanel;
-        [SerializeField] private Button optionButtonReference;
+        [SerializeField] private GameObject optionButtonReference;
+
+        private Queue<GameObject> optionsButtonQueue = new Queue<GameObject>();
         
         private float buttonOffset = 75;
 
@@ -48,8 +48,8 @@ namespace CowMilking.DialogueSystem
 
         [SerializeField] float _typingSpeed = 0.05f;
 
-        //TEST CODE
-        public Conversation testConvo;
+        ////TEST CODE
+        //public Conversation testConvo;
 
         private void Awake()
         {
@@ -64,11 +64,11 @@ namespace CowMilking.DialogueSystem
 
         }
 
-        private void Start()
-        {
-            //TEST CODE
-            StartConversation(testConvo);
-        }
+        //private void Start()
+        //{
+        //    //TEST CODE
+        //    StartConversation(testConvo);
+        //}
 
         private void Update()
         {
@@ -197,24 +197,42 @@ namespace CowMilking.DialogueSystem
 
         void DisplayOptions()
         {
+            List<GameObject> buttonList = new List<GameObject>();
+
             for(int i = 0; i < _currentConversation.options.Length; i++)
             {
-                Button optionButton = Instantiate(optionButtonReference, optionPanel);
+                GameObject optionButton = Instantiate(optionButtonReference, optionPanel);
                 RectTransform rt = optionButton.GetComponent<RectTransform>();
+
+                optionsButtonQueue.Enqueue(optionButton);
 
                 float offset = (rt.localPosition.y - (buttonOffset * i)) + (buttonOffset * (_currentConversation.options.Length - i));
 
                 rt.localPosition = new Vector2(rt.localPosition.x, offset);
 
-                _currentConversation.options[i].SetupButton(optionButton);
+                optionButton.SetActive(true);
 
-                optionButton.enabled = true;
+                optionButton.GetComponentInChildren<TMP_Text>().text = _currentConversation.options[i].optionText;
+
+                int index = i;
+
+                optionButton.GetComponent<Button>().onClick.AddListener(new(() =>
+                {
+                    StartConversation(_currentConversation.options[index].conversationPath);
+                    ClearOptionsButtons();
+                }));
             }
         }
 
-        void SelectOption(Option o)
+        void ClearOptionsButtons()
         {
-            Debug.Log(o.optionText);
+            while(optionsButtonQueue.Count > 0)
+            {
+                Destroy(optionsButtonQueue.Dequeue());
+            }
+
+            //Likely unnecessary but just for cleanup
+            optionsButtonQueue.Clear();
         }
 
         private void ClearAllFields()
