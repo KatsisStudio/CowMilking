@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2703358130484175576, guid: 016715da74b3e004f9a406226278b440, type: 3}
@@ -56,6 +57,10 @@ PrefabInstance:
       value: GrassDark Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2703358130484175579, guid: 016715da74b3e004f9a406226278b440, type: 3}
+      propertyPath: m_Color.a
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 2703358130484175579, guid: 016715da74b3e004f9a406226278b440, type: 3}
       propertyPath: m_Color.b
       value: 0.22272727
       objectReference: {fileID: 0}
@@ -68,4 +73,7 @@ PrefabInstance:
       value: 0.2912587
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 016715da74b3e004f9a406226278b440, type: 3}
