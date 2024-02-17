@@ -189,6 +189,11 @@ namespace CowMilking.Farm
                 }
             }
         }
+
+        public void Play()
+        {
+            SceneManager.LoadScene("Main");
+        }
     }
 
     public enum ClickAction
