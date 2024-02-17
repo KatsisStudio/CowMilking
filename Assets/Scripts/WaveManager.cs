@@ -1,8 +1,10 @@
 ﻿using CowMilking.Character.Enemy;
+using CowMilking.Persistency;
 using CowMilking.SO;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace CowMilking
 {
@@ -37,11 +39,21 @@ namespace CowMilking
                 {
                     SpawnNext(w);
 
-                    yield return new WaitForSeconds(3f);
+                    yield return new WaitForSeconds(5f);
                 }
 
-                yield return new WaitForSeconds(6f);
+                yield return new WaitForSeconds(15f);
             }
+
+            BackToMenu();
+        }
+
+        public void BackToMenu()
+        {
+            PersistencyManager.Instance.SaveData.Energy += GameManager.Instance.NbKilled * 10;
+            PersistencyManager.Instance.Save();
+
+            SceneManager.LoadScene("Farm");
         }
 
         private void SpawnNext(WaveInfo wave)
