@@ -1,5 +1,6 @@
 ﻿using CowMilking.SO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace CowMilking.Character.Enemy
 {
@@ -68,6 +69,10 @@ namespace CowMilking.Character.Enemy
                 _target = collision.GetComponent<ICharacter>();
 
                 _attackTimer = _info.DelayBetweenAttacks;
+            }
+            else if (collision.CompareTag("GameOver"))
+            {
+                SceneManager.LoadScene("Farm");
             }
         }
 
