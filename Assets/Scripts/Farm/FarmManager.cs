@@ -101,7 +101,10 @@ namespace CowMilking.Farm
 
             if (cow.Info.NextCow != null)
             {
+                PersistencyManager.Instance.SaveData.OwnedCows.Remove(cow.Info.Key);
                 cow.Info = cow.Info.NextCow;
+                PersistencyManager.Instance.SaveData.OwnedCows.Add(cow.Info.Key);
+                PersistencyManager.Instance.Save();
             }
 
             QuestEvents.Instance.MilkedACow(cow.Info);
