@@ -1,4 +1,5 @@
-﻿using CowMilking.SO;
+﻿using CowMilking.Persistency;
+using CowMilking.SO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -72,6 +73,9 @@ namespace CowMilking.Character.Enemy
             }
             else if (collision.CompareTag("GameOver"))
             {
+                PersistencyManager.Instance.SaveData.Energy += GameManager.Instance.NbKilled * 10;
+                PersistencyManager.Instance.Save();
+
                 SceneManager.LoadScene("Farm");
             }
         }

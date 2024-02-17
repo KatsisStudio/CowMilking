@@ -26,6 +26,7 @@ namespace CowMilking.Character.Player
             {
                 c.ApplySlow(_info.SlowDuration);
             }
+            GameManager.Instance.NbKilled++;
             Destroy(gameObject);
         }
     }

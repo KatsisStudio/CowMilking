@@ -25,6 +25,8 @@ namespace CowMilking
 
         private int _tileLayer;
 
+        public int NbKilled { set; get; }
+
         private void Awake()
         {
             Instance = this;
