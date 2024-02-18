@@ -98,6 +98,9 @@ namespace CowMilking.Farm
 
         private IEnumerator Milk(FarmCowController cow)
         {
+            PersistencyManager.Instance.SaveData.Energy -= 50;
+            PersistencyManager.Instance.Save();
+
             _preventButtonInteractions.SetActive(true);
             cow.IsBeingMilked = true;
             _milkingPreview.SetActive(true);
@@ -131,7 +134,7 @@ namespace CowMilking.Farm
             public int GetHashCode(CowInfo cow)
             {
                 //Check whether the object is null
-                if (Object.ReferenceEquals(cow, null)) return 0;
+                if (ReferenceEquals(cow, null)) return 0;
                 return cow.Element.GetHashCode();
             }
         }

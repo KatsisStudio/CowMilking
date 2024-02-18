@@ -1773,6 +1773,7 @@ MonoBehaviour:
   _buttons:
   - {fileID: 39086756}
   - {fileID: 1193634976}
+  - {fileID: 3389546303570820958}
   _preventButtonInteractions: {fileID: 79608132}
   _cowPrefab: {fileID: 6677734504004324439, guid: d9e22225f03fb5c41ad6566eb42b5858, type: 3}
   _upgradeContainer: {fileID: 790452683}
@@ -2442,8 +2443,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3389546303658271868, guid: 55bad05ae6895d841acc39ca636b700e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3389546303570820959}
   m_SourcePrefab: {fileID: 100100000, guid: 55bad05ae6895d841acc39ca636b700e, type: 3}
+--- !u!1 &3389546303570820958 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3389546303658271868, guid: 55bad05ae6895d841acc39ca636b700e, type: 3}
+  m_PrefabInstance: {fileID: 3389546303570820957}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3389546303570820959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3389546303570820958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 494bfb1010af447489ce9de93f6c8f89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
