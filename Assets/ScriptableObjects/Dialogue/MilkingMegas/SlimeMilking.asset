@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0267c7d2b651b0a4fab8d762f7eaa549, type: 3}
+  m_Name: SlimeMilking
+  m_EditorClassIdentifier: 
+  leftNameDefault: 
+  rightNameDefault: 
+  leftSpriteDefault: {fileID: 0}
+  rightSpriteDefault: {fileID: 0}
+  fullCGSpriteDefault: {fileID: 21300000, guid: a450869c6e4426f45a341780e434cf80, type: 3}
+  dialogues:
+  - speakerName: 
+    speakerSprite: {fileID: 21300000, guid: a450869c6e4426f45a341780e434cf80, type: 3}
+    onRight: 0
+    fullScreen: 1
+    sentences:
+    - (The trick with milking Slime Cows is to get them when they are sleeping)
+    - (Which isn't difficult, since they sleep 23 hours out of the day)
+    - (However there's always the risk they try to pull you into themselves)
+    - (You approach the sleeping Slime Cow, who seems to be using one of her breasts
+      as a pillow)
+    - (White and sweet smelling liquid drips from her nipples, mixing with her slime
+      and the grass.)
+    - (You set up a bucket next to her and, slowly so as not to wake her, you begin)
+    - (Your hands grow slick with slime as you press and squeeze her breasts)
+    - (The Slime Cow barely reacts, and continues snoring as you finish up)
+    dialogueEvent: {fileID: 0}
+  options: []
