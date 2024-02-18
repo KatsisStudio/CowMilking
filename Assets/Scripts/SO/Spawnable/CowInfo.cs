@@ -10,6 +10,7 @@ namespace CowMilking.SO
         public string Key;
         public string Name;
         public Sprite Sprite;
+        public int BaseHealth;
 
         public ElementType Element;
         public bool IsStartingCow;

@@ -18,6 +18,7 @@ MonoBehaviour:
   Key: FIRE_2
   Name: Magma Cow
   Sprite: {fileID: 21300000, guid: c248b486c579b7243a6dc3a579b51130, type: 3}
+  BaseHealth: 1
   Element: 3
   IsStartingCow: 0
   NextCow: {fileID: 11400000, guid: ef0aa4297c19d7a47bc84f62f5c1a064, type: 2}

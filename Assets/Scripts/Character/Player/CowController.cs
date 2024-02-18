@@ -9,7 +9,7 @@ namespace CowMilking.Character.Player
         [SerializeField]
         private GameObject _bulletPrefab;
 
-        protected override int BaseHealth => 1;
+        protected override int BaseHealth => _info.BaseHealth;
 
         private void Start()
         {
