@@ -17,7 +17,7 @@ MonoBehaviour:
   DangerValue: 4
   Key: METAL_3
   Name: Metal Cow
-  Sprite: {fileID: 21300000, guid: cd24b1ed2e5cbaf4cb525b311d5b375f, type: 3}
+  Sprite: {fileID: 21300000, guid: a0479202449ef74499e79dac2f2bf637, type: 3}
   BaseHealth: 12
   Element: 5
   IsStartingCow: 0
