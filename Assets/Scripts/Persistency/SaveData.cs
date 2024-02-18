@@ -6,7 +6,7 @@ namespace CowMilking.Persistency
     public class SaveData
     {
         public List<string> OwnedCows { set; get; } = new();
-        public int Energy { set; get; } = 500;
+        public int Energy { set; get; } = 50;
 
         public Dictionary<int, Dictionary<int, int>> QuestProgress = new();
 
