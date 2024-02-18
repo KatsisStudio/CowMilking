@@ -22,6 +22,8 @@ MonoBehaviour:
   Element: 2
   IsStartingCow: 0
   NextCow: {fileID: 0}
+  Conversation: {fileID: 11400000, guid: 6edd0ff8605907242887367d821232a0, type: 2}
+  FinalCG: {fileID: 21300000, guid: 10b800462569a364388496a4a2d76643, type: 3}
   EatGrass: 0
   DelayBetweenGrassEating: 0.1
   FireBullet: 0

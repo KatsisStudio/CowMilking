@@ -1,4 +1,5 @@
-﻿using CowMilking.Farm.Upgrade;
+﻿using CowMilking.DialogueSystem;
+using CowMilking.Farm.Upgrade;
 using CowMilking.Persistency;
 using CowMilking.Questing;
 using CowMilking.SO;
@@ -39,6 +40,8 @@ namespace CowMilking.Farm
 
         [SerializeField]
         private Transform _milkingCam;
+
+        [SerializeField] private Image _cgBg;
 
         private int _cowLayer;
 
@@ -101,16 +104,32 @@ namespace CowMilking.Farm
             PersistencyManager.Instance.SaveData.Energy -= 50;
             PersistencyManager.Instance.Save();
 
-            _preventButtonInteractions.SetActive(true);
-            cow.IsBeingMilked = true;
-            _milkingPreview.SetActive(true);
-            _milkingCam.transform.position = new(cow.transform.position.x, cow.transform.position.y, _milkingCam.transform.position.z);
 
-            yield return new WaitForSeconds(1f);
+            if (cow.Info.Conversation == null)
+            {
+                _preventButtonInteractions.SetActive(true);
+                cow.IsBeingMilked = true;
+                _milkingPreview.SetActive(true);
+                _milkingCam.transform.position = new(cow.transform.position.x, cow.transform.position.y, _milkingCam.transform.position.z);
 
-            _preventButtonInteractions.SetActive(false);
-            cow.IsBeingMilked = false;
-            _milkingPreview.SetActive(false);
+                yield return new WaitForSeconds(1f);
+
+                _preventButtonInteractions.SetActive(false);
+                cow.IsBeingMilked = false;
+                _milkingPreview.SetActive(false);
+            }
+            else
+            {
+                //DialogueManager.Instance.gameObject.SetActive(true);
+                //DialogueManager.Instance.StartConversation(cow.Info.Conversation);
+
+                _cgBg.gameObject.SetActive(true);
+                _cgBg.sprite = cow.Info.FinalCG;
+
+                yield return new WaitForSeconds(3f);
+
+                _cgBg.gameObject.SetActive(false);
+            }
 
             if (cow.Info.NextCow != null)
             {

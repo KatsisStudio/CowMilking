@@ -1,4 +1,5 @@
 ﻿using CowMilking.Character.Player;
+using CowMilking.DialogueSystem;
 using UnityEngine;
 
 namespace CowMilking.SO
@@ -16,6 +17,8 @@ namespace CowMilking.SO
         public bool IsStartingCow;
 
         public CowInfo NextCow;
+        public Conversation Conversation;
+        public Sprite FinalCG;
 
         [Header("Grass")]
         public bool EatGrass;
