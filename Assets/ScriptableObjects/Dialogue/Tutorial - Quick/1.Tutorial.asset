@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0267c7d2b651b0a4fab8d762f7eaa549, type: 3}
+  m_Name: 1.Tutorial
+  m_EditorClassIdentifier: 
+  leftNameDefault: 
+  rightNameDefault: Ranch Girl
+  leftSpriteDefault: {fileID: 0}
+  rightSpriteDefault: {fileID: 21300000, guid: e61bcc28ca1803b4090f398958e034a8, type: 3}
+  fullCGSpriteDefault: {fileID: 0}
+  dialogues:
+  - speakerName: Rancher
+    speakerSprite: {fileID: 21300000, guid: e61bcc28ca1803b4090f398958e034a8, type: 3}
+    onRight: 1
+    fullScreen: 0
+    sentences:
+    - Well howdy there partner! Pleasure ta make your acquaintance!
+    - To be honest, it's a bit tough finding people who are interested in farming
+      these day.
+    - Not entirely sure why, it's good, honest, rewardin' work!
+    - And you're showing up just in time. Weird naked aliens have started attacking
+      our ranch!
+    - We could use all the help we can get. I'll show you the ropes real quick.
+    - To get new cows, click the "New Cow" button. This will add a regular old grazing
+      cow to our herd!
+    - Next you're going to want to use one of our patented potions to upgrade them
+      and get them ready for milking.
+    - Click the "Upgrade" button and select the cow you want to upgrade, then select
+      the potion to give them!
+    - Potion supplies are limited, but you can get more by working the farm.
+    - Now for ma favorite activity. Milking!
+    - Click the "Milking" button, then click the cow you want to milk.
+    - You can only milk upgraded cows, and each time you milk them they get bigger
+      and stronger!
+    - All of these activities cost 'Energy', so keep that in mind as you build up
+      your herd for battle.
+    - Click the "Play" button once you think you're ready to head into the field.
+    - Cows can only be put into the field if there's enough 'Grass'. Be sure to put
+      down Grazing Cows to build up the amount of grass the field has!
+    - And I think that's it. Oh wait! I almost forgot the most important thing!
+    - Welcome to the Milky Way Ranch!
+    dialogueEvent: {fileID: 0}
+  options: []

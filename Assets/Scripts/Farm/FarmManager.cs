@@ -70,6 +70,14 @@ namespace CowMilking.Farm
             }
         }
 
+        private void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.Q))
+            {
+                Questlog.Instance.gameObject.SetActive(true);
+            }
+        }
+
         public void AddNewCow(string key)
         {
             var go = Instantiate(_cowPrefab, Vector2.zero, Quaternion.identity);
@@ -79,6 +87,8 @@ namespace CowMilking.Farm
             var fcc = go.GetComponent<FarmCowController>();
             fcc.Info = info;
             Cows.Add(fcc);
+
+            QuestEvents.Instance.BoughtACow();
         }
 
         public void SetMilkingAction()
@@ -160,6 +170,8 @@ namespace CowMilking.Farm
                                     _selectedCow.Info = curr;
                                     _upgradeContainer.gameObject.SetActive(false);
                                     ClickAction = ClickAction.None;
+
+                                    QuestEvents.Instance.UpgradedACow(_selectedCow.Info);
 
                                     foreach (var e in _updatables)
                                     {

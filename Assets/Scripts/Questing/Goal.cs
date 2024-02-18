@@ -35,5 +35,10 @@ namespace CowMilking.Questing
             quest.CheckAllGoalsCompleted();
         }
 
+        public virtual void ResetGoal()
+        {
+            completed = false;
+        }
+
     }
 }

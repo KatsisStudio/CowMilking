@@ -10,10 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da49bed9ddeb7f9408956353d3abd5fc, type: 3}
-  m_Name: Learning the Ropes
+  m_Name: Milk of the Earth
   m_EditorClassIdentifier: 
-  questName: 
-  questDescription: 
+  questName: Milk of the Earth
+  questDescription: There ain't no milk better for keeping big, strong, and healthy
+    like our Earth element milk! Get us a few bottles for the hungry working folk
+    down the way.
   questComplete: 0
-  goals: []
-  questRewards: []
+  goals:
+  - {fileID: 11400000, guid: 9ce2d1e4a7cc8f4408c2ad2dfa1e7a81, type: 2}
+  questRewards:
+  - reward: 0
+    amount: 5
+  - reward: 5
+    amount: 3

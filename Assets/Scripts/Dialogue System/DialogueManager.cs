@@ -48,8 +48,8 @@ namespace CowMilking.DialogueSystem
 
         [SerializeField] float _typingSpeed = 0.05f;
 
-        ////TEST CODE
-        //public Conversation testConvo;
+        //TEST CODE
+        public Conversation testConvo;
 
         private void Awake()
         {
@@ -64,11 +64,11 @@ namespace CowMilking.DialogueSystem
 
         }
 
-        //private void Start()
-        //{
-        //    //TEST CODE
-        //    StartConversation(testConvo);
-        //}
+        private void Start()
+        {
+            //TEST CODE
+            StartConversation(testConvo);
+        }
 
         private void Update()
         {

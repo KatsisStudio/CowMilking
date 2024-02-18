@@ -1,3 +1,5 @@
+using CowMilking.Farm;
+using CowMilking.Persistency;
 using UnityEngine;
 
 namespace CowMilking.Questing
@@ -65,20 +67,36 @@ namespace CowMilking.Questing
                 switch(qr.reward)
                 {
                     case Rewards.Energy:
+                        PersistencyManager.Instance.SaveData.Energy += qr.amount;
                         break;
                     case Rewards.Cow:
+                        PersistencyManager.Instance.SaveData.OwnedCows.Add("NEUTRAL");
+                        FarmManager.Instance.AddNewCow("NEUTRAL");
                         break;
                     case Rewards.FirePotion:
+                        PersistencyManager.Instance.SaveData.Potions.Add(Character.Player.ElementType.Fire, qr.amount);
                         break;
                     case Rewards.WaterPotion:
+                        PersistencyManager.Instance.SaveData.Potions.Add(Character.Player.ElementType.Water, qr.amount);
                         break;
                     case Rewards.EarthPotion:
+                        PersistencyManager.Instance.SaveData.Potions.Add(Character.Player.ElementType.Earth, qr.amount);
                         break;
                     case Rewards.WoodPotion:
+                        PersistencyManager.Instance.SaveData.Potions.Add(Character.Player.ElementType.Wood, qr.amount);
                         break;
                     case Rewards.MetalPotion:
+                        PersistencyManager.Instance.SaveData.Potions.Add(Character.Player.ElementType.Metal, qr.amount);
                         break;
                 }
+            }
+            
+            foreach(Goal g in goals)
+            {
+                //Resets all goals and quest to allow farming of potions
+                //Not ideal since we at the moment don't get proper update on quest completion
+                //TOAST message?
+                g.ResetGoal();
             }
         }
 

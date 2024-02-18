@@ -1,4 +1,5 @@
 using CowMilking.SO;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -37,5 +38,24 @@ namespace CowMilking.Questing
             if (OnAlienKilled != null)
                 OnAlienKilled.Invoke(cowInfo);
         }
+
+        public delegate void CowBought();
+        public static event CowBought OnCowBought;
+
+        public void BoughtACow()
+        {
+            if (OnCowBought != null)
+                OnCowBought.Invoke();
+        }
+
+        public delegate void CowUpgraded(CowInfo cowInfo);
+        public static event CowUpgraded OnCowUpgraded;
+
+        public void UpgradedACow(CowInfo cowInfo)
+        {
+            if (OnCowUpgraded != null)
+                OnCowUpgraded.Invoke(cowInfo);
+        }
+
     }
 }

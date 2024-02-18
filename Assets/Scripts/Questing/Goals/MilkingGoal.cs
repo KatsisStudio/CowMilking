@@ -15,7 +15,10 @@ namespace CowMilking.Questing
             base.Initialize(q, id);
 
             if (PersistencyManager.Instance.SaveData.GetQuestProgress(quest.questID, goalID) >= requiredAmount)
+            {
                 completed = true;
+            }
+                
             else
                 QuestEvents.OnCowMilked += Increment;
         }
@@ -37,6 +40,12 @@ namespace CowMilking.Questing
             QuestEvents.OnCowMilked -= Increment;
 
             base.Complete();
+        }
+
+        public override void ResetGoal()
+        {
+            base.ResetGoal();
+            PersistencyManager.Instance.SaveData.ResetQuestProgress(quest.questID, goalID);
         }
     }
 }

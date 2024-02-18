@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8e8e7a7c05955b4fa81cfd2c58774b3, type: 3}
+  m_Name: Fire3_Cow
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 3782565947905830346, guid: 50d876a052d45bb42a77ab47c059261f, type: 3}
+  Cost: 15
+  DangerValue: 5
+  Key: FIRE_3
+  Name: Dragon cow
+  Sprite: {fileID: 21300000, guid: 7c145f95edd03dc4d8621ebaba9fe783, type: 3}
+  BaseHealth: 8
+  Element: 3
+  IsStartingCow: 0
+  NextCow: {fileID: 0}
+  EatGrass: 0
+  DelayBetweenGrassEating: 0
+  FireBullet: 1
+  Damage: 3
+  Color: {r: 0.8980392, g: 0.2509804, b: 0, a: 1}
+  DelayBetweenBullets: 1
+  SlowDuration: 1

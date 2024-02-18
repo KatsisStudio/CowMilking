@@ -18,7 +18,7 @@ MonoBehaviour:
   Key: EARTH_2
   Name: Mommy Cow
   Sprite: {fileID: 21300000, guid: aafc51a38324fe243af24bb7c987eb54, type: 3}
-  BaseHealth: 7
+  BaseHealth: 10
   Element: 4
   IsStartingCow: 1
   NextCow: {fileID: 11400000, guid: 4f62f5b27c28bc2489aa892413ad70ca, type: 2}

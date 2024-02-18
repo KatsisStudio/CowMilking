@@ -220,6 +220,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7252829431469406076, guid: fa1185c5fb895f84989df69b957d6ba8, type: 3}
+      propertyPath: testConvo
+      value: 
+      objectReference: {fileID: 11400000, guid: ef8812d702e4b35439e5f4a284e0967a, type: 2}
+    - target: {fileID: 7252829431469406076, guid: fa1185c5fb895f84989df69b957d6ba8, type: 3}
       propertyPath: optionButtonReference
       value: 
       objectReference: {fileID: 2036272254}
