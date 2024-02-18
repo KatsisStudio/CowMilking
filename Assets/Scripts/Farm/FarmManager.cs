@@ -101,6 +101,10 @@ namespace CowMilking.Farm
         {
             PersistencyManager.Instance.SaveData.Energy -= 50;
             PersistencyManager.Instance.Save();
+            foreach (var e in _updatables)
+            {
+                e.UpdateUI();
+            }
 
 
             if (cow.Info.Conversation == null)

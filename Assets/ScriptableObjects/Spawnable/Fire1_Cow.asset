@@ -20,8 +20,10 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: 32bdd0695e69521408888204d5a9ed13, type: 3}
   BaseHealth: 3
   Element: 3
-  IsStartingCow: 0
+  IsStartingCow: 1
   NextCow: {fileID: 11400000, guid: b3d02dec4c1b22d4da25846d52a7a357, type: 2}
+  Conversation: {fileID: 0}
+  FinalCG: {fileID: 0}
   EatGrass: 0
   DelayBetweenGrassEating: 0
   FireBullet: 1
