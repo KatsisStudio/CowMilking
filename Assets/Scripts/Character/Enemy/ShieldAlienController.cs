@@ -7,6 +7,9 @@ namespace CowMilking.Character.Enemy
         [SerializeField]
         private Sprite _noShieldSprite;
 
+        [SerializeField]
+        private int _shieldHealth;
+
         private bool _hasShield = true;
 
         public override void ApplySlow(float duration)
@@ -18,12 +21,18 @@ namespace CowMilking.Character.Enemy
 
         public override void TakeDamage(int amount)
         {
-            base.TakeDamage(amount);
-
-            if (_hasShield && _health <= BaseHealth / 2f)
+            if (_shieldHealth > 0)
             {
-                _hasShield = false;
-                _sr.sprite = _noShieldSprite;
+                _shieldHealth--;
+                if (_shieldHealth == 0)
+                {
+                    _hasShield = false;
+                    _sr.sprite = _noShieldSprite;
+                }
+            }
+            else
+            {
+                base.TakeDamage(amount);
             }
         }
     }

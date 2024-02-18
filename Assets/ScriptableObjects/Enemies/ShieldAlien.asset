@@ -15,6 +15,6 @@ MonoBehaviour:
   Prefab: {fileID: 1860106070687554963, guid: 48d9f6dd71f3caf4088ec98f57aa458e, type: 3}
   Sprite: {fileID: -90330166, guid: e2d3e2a6fc44694429bede8f73444874, type: 3}
   Speed: 1
-  Health: 10
+  Health: 5
   DelayBetweenAttacks: 1
   MinDangerReq: 10
