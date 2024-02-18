@@ -6,13 +6,13 @@ namespace CowMilking.Persistency
     public class SaveData
     {
         public List<string> OwnedCows { set; get; } = new();
-        public int Energy { set; get; } = 50;
+        public int Energy { set; get; } = 70;
 
         public Dictionary<int, Dictionary<int, int>> QuestProgress = new();
 
         public Dictionary<ElementType, int> Potions { set; get; } = new()
         {
-            { ElementType.Water, 1 }
+            { ElementType.Fire, 1 }
         };
 
         public void RemovePotion(ElementType e)

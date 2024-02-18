@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f7b6de34f367034f9af0db0d8017404, type: 3}
   m_Name: GameInfo
   m_EditorClassIdentifier: 
-  BaseGrassAmount: 10
+  BaseGrassAmount: 20
