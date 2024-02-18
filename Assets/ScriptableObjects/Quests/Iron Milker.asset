@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da49bed9ddeb7f9408956353d3abd5fc, type: 3}
-  m_Name: The Cold Northerner
+  m_Name: Iron Milker
   m_EditorClassIdentifier: 
-  questName: The Cold Northerner
-  questDescription: A buyer in the frigid north is looking for a hot beverage to
-    keep him nice and cozy. Mind getting your mits on and harvesting some milk from
-    our fire cows?
+  questName: Iron Milker
+  questDescription: For extra thick and creamy milk, there's no cows better than
+    out Metal cows! Milking them can be a bit challenging on account of how aggressive
+    they can get, but I'm sure a firm but tender hand can do the job!
   questComplete: 0
   goals:
-  - {fileID: 11400000, guid: 18826d78570a6c442a1a85ab47ae6d33, type: 2}
+  - {fileID: 11400000, guid: cb88be3e8c0e50941af8b53a701f1fe2, type: 2}
   questRewards:
   - reward: 0
     amount: 5
-  - reward: 3
+  - reward: 2
     amount: 2

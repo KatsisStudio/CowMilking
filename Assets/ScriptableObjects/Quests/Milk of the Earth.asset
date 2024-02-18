@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da49bed9ddeb7f9408956353d3abd5fc, type: 3}
-  m_Name: The Cold Northerner
+  m_Name: Milk of the Earth
   m_EditorClassIdentifier: 
-  questName: The Cold Northerner
-  questDescription: A buyer in the frigid north is looking for a hot beverage to
-    keep him nice and cozy. Mind getting your mits on and harvesting some milk from
-    our fire cows?
+  questName: Milk of the Earth
+  questDescription: There ain't no milk better for keeping big, strong, and healthy
+    like our Earth element milk! Get us a few bottles for the hungry working folk
+    down the way.
   questComplete: 0
   goals:
-  - {fileID: 11400000, guid: 18826d78570a6c442a1a85ab47ae6d33, type: 2}
+  - {fileID: 11400000, guid: 9ce2d1e4a7cc8f4408c2ad2dfa1e7a81, type: 2}
   questRewards:
   - reward: 0
     amount: 5
-  - reward: 3
-    amount: 2
+  - reward: 5
+    amount: 3

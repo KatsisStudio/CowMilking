@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da49bed9ddeb7f9408956353d3abd5fc, type: 3}
   m_Name: Learning the Ropes
   m_EditorClassIdentifier: 
-  questName: 
-  questDescription: 
+  questName: Learning the Ropes
+  questDescription: First day, first cow! Milk her nice and easy.
   questComplete: 0
-  goals: []
-  questRewards: []
+  goals:
+  - {fileID: 11400000, guid: 11071ae35de89ad46a838f67354da19d, type: 2}
+  questRewards:
+  - reward: 0
+    amount: 5
+  - reward: 1
+    amount: 1

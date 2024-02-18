@@ -1,3 +1,4 @@
+using CowMilking.Persistency;
 using UnityEngine;
 
 namespace CowMilking.Questing
@@ -69,14 +70,19 @@ namespace CowMilking.Questing
                     case Rewards.Cow:
                         break;
                     case Rewards.FirePotion:
+                        PersistencyManager.Instance.SaveData.Potions.Add(Character.Player.ElementType.Fire, qr.amount);
                         break;
                     case Rewards.WaterPotion:
+                        PersistencyManager.Instance.SaveData.Potions.Add(Character.Player.ElementType.Water, qr.amount);
                         break;
                     case Rewards.EarthPotion:
+                        PersistencyManager.Instance.SaveData.Potions.Add(Character.Player.ElementType.Earth, qr.amount);
                         break;
                     case Rewards.WoodPotion:
+                        PersistencyManager.Instance.SaveData.Potions.Add(Character.Player.ElementType.Wood, qr.amount);
                         break;
                     case Rewards.MetalPotion:
+                        PersistencyManager.Instance.SaveData.Potions.Add(Character.Player.ElementType.Metal, qr.amount);
                         break;
                 }
             }
