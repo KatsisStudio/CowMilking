@@ -64,15 +64,9 @@ namespace CowMilking.DialogueSystem
 
         }
 
-        private void Start()
-        {
-            //TEST CODE
-            StartConversation(testConvo);
-        }
-
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space)) { ContinueText(); }
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonUp(0)) { ContinueText(); }
         }
 
         public void StartConversation(Conversation convo)

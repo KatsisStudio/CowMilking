@@ -7,7 +7,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -40,8 +39,6 @@ namespace CowMilking.Farm
 
         [SerializeField]
         private Transform _milkingCam;
-
-        [SerializeField] private Image _cgBg;
 
         private int _cowLayer;
 
@@ -121,15 +118,8 @@ namespace CowMilking.Farm
             }
             else
             {
-                //DialogueManager.Instance.gameObject.SetActive(true);
-                //DialogueManager.Instance.StartConversation(cow.Info.Conversation);
-
-                _cgBg.gameObject.SetActive(true);
-                _cgBg.sprite = cow.Info.FinalCG;
-
-                yield return new WaitForSeconds(3f);
-
-                _cgBg.gameObject.SetActive(false);
+                DialogueManager.Instance.gameObject.SetActive(true);
+                DialogueManager.Instance.StartConversation(cow.Info.Conversation);
             }
 
             if (cow.Info.NextCow != null)
