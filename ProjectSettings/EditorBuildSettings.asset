@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/QuestLog.unity
     guid: 2297b353029dd4f49b11689b59ded7ea
+  - enabled: 1
+    path: Assets/Scenes/DialogueSystem.unity
+    guid: 83d3ad0d4dacfa24ba6761725c212fe5
   m_configObjects: {}

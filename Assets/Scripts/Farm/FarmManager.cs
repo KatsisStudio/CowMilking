@@ -54,6 +54,7 @@ namespace CowMilking.Farm
             Instance = this;
             SceneManager.LoadScene("CowManager", LoadSceneMode.Additive);
             SceneManager.LoadScene("QuestLog", LoadSceneMode.Additive);
+            SceneManager.LoadScene("DialogueSystem", LoadSceneMode.Additive);
 
             _updatables = _buttons.Select(x => x.GetComponent<IUpdatableUI>()).ToArray();
 
