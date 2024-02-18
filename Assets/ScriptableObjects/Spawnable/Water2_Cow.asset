@@ -18,7 +18,7 @@ MonoBehaviour:
   Key: WATER_2
   Name: Sleepy Cow
   Sprite: {fileID: 21300000, guid: f661b5daad4f0a94c89125381255dd87, type: 3}
-  BaseHealth: 1
+  BaseHealth: 4
   Element: 1
   IsStartingCow: 0
   NextCow: {fileID: 11400000, guid: 50a302a35f193c548916bcfec648d6ff, type: 2}

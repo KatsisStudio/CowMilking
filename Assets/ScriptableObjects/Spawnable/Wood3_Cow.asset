@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8e8e7a7c05955b4fa81cfd2c58774b3, type: 3}
-  m_Name: Earth2_Cow
+  m_Name: Wood3_Cow
   m_EditorClassIdentifier: 
   Prefab: {fileID: 3782565947905830346, guid: 50d876a052d45bb42a77ab47c059261f, type: 3}
-  Cost: 10
-  DangerValue: 3
-  Key: EARTH_2
-  Name: Mommy Cow
-  Sprite: {fileID: 21300000, guid: aafc51a38324fe243af24bb7c987eb54, type: 3}
-  BaseHealth: 10
-  Element: 4
-  IsStartingCow: 1
-  NextCow: {fileID: 11400000, guid: 4f62f5b27c28bc2489aa892413ad70ca, type: 2}
-  EatGrass: 1
+  Cost: 15
+  DangerValue: 5
+  Key: WOOD_23
+  Name: Dryad Cow
+  Sprite: {fileID: 21300000, guid: 5a422ccf269417547af5c2820aa8a57e, type: 3}
+  BaseHealth: 8
+  Element: 2
+  IsStartingCow: 0
+  NextCow: {fileID: 0}
+  EatGrass: 0
   DelayBetweenGrassEating: 0
   FireBullet: 0
-  Damage: 0
-  Color: {r: 1, g: 1, b: 1, a: 1}
-  DelayBetweenBullets: 0
+  Damage: 3
+  Color: {r: 0, g: 0.50980395, b: 0, a: 0}
+  DelayBetweenBullets: 2
   SlowDuration: 0
