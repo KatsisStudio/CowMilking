@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Earth2_Cow
   m_EditorClassIdentifier: 
   Prefab: {fileID: 3782565947905830346, guid: 50d876a052d45bb42a77ab47c059261f, type: 3}
-  Cost: 7
-  DangerValue: 2
-  Key: EARTH_1
-  Name: Earth Cow
+  Cost: 10
+  DangerValue: 3
+  Key: EARTH_2
+  Name: Mommy Cow
   Sprite: {fileID: 21300000, guid: aafc51a38324fe243af24bb7c987eb54, type: 3}
   BaseHealth: 7
   Element: 4
   IsStartingCow: 1
-  NextCow: {fileID: 0}
+  NextCow: {fileID: 11400000, guid: 4f62f5b27c28bc2489aa892413ad70ca, type: 2}
   EatGrass: 1
   DelayBetweenGrassEating: 0
   FireBullet: 0
