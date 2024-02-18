@@ -22,8 +22,8 @@ MonoBehaviour:
   Element: 2
   IsStartingCow: 0
   NextCow: {fileID: 11400000, guid: 87a1102ff83eb18409a56842ff4b9271, type: 2}
-  EatGrass: 0
-  DelayBetweenGrassEating: 0
+  EatGrass: 1
+  DelayBetweenGrassEating: 0.25
   FireBullet: 0
   Damage: 2
   Color: {r: 0, g: 0.50980395, b: 0, a: 0}
