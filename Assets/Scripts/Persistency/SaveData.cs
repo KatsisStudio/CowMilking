@@ -12,7 +12,7 @@ namespace CowMilking.Persistency
 
         public Dictionary<ElementType, int> Potions { set; get; } = new()
         {
-            { ElementType.Fire, 1 }
+            { ElementType.Water, 1 }
         };
 
         public void RemovePotion(ElementType e)

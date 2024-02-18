@@ -15,13 +15,13 @@ MonoBehaviour:
   Prefab: {fileID: 3782565947905830346, guid: 50d876a052d45bb42a77ab47c059261f, type: 3}
   Cost: 10
   DangerValue: 3
-  Key: FIRE_1
-  Name: Fire Cow
+  Key: WATER_2
+  Name: Sleepy Cow
   Sprite: {fileID: 21300000, guid: f661b5daad4f0a94c89125381255dd87, type: 3}
   BaseHealth: 1
   Element: 1
   IsStartingCow: 0
-  NextCow: {fileID: 0}
+  NextCow: {fileID: 11400000, guid: 50a302a35f193c548916bcfec648d6ff, type: 2}
   EatGrass: 0
   DelayBetweenGrassEating: 0
   FireBullet: 1
