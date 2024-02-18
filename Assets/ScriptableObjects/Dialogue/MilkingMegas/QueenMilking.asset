@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0267c7d2b651b0a4fab8d762f7eaa549, type: 3}
+  m_Name: QueenMilking
+  m_EditorClassIdentifier: 
+  leftNameDefault: 
+  rightNameDefault: 
+  leftSpriteDefault: {fileID: 0}
+  rightSpriteDefault: {fileID: 0}
+  fullCGSpriteDefault: {fileID: 21300000, guid: d330be2bd8f62f14491a343d20b9129c, type: 3}
+  dialogues:
+  - speakerName: 
+    speakerSprite: {fileID: 21300000, guid: d330be2bd8f62f14491a343d20b9129c, type: 3}
+    onRight: 0
+    fullScreen: 0
+    sentences:
+    - (The Queen Cow allows you to milk her)
+    - (But only from your knees)
+    dialogueEvent: {fileID: 0}
+  options: []

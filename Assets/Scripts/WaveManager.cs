@@ -33,6 +33,7 @@ namespace CowMilking
 
         private IEnumerator SpawnWaves()
         {
+            yield return new WaitForSeconds(5f);
             foreach (var w in  _waves)
             {
                 for (int i = 0; i < w.EnemyCount; i++)
