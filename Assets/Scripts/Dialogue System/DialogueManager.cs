@@ -256,7 +256,7 @@ namespace CowMilking.DialogueSystem
             imageLeft.sprite = placeholderTransparent.sprite;
             imageRight.sprite = placeholderTransparent.sprite;
 
-            //Call anim to close the dialogue box? Or unload scene?
+            gameObject.SetActive(false);
         }
 
     }
