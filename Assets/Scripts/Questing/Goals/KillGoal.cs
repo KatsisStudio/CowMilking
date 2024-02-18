@@ -41,5 +41,11 @@ namespace CowMilking.Questing
             base.Complete();
         }
 
+        public override void ResetGoal()
+        {
+            base.ResetGoal();
+            PersistencyManager.Instance.SaveData.ResetQuestProgress(quest.questID, goalID);
+        }
+
     }
 }

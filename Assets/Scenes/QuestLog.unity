@@ -416,8 +416,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0033417908}
-  m_SizeDelta: {x: 0, y: 481.2}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 715}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &391803853
 GameObject:
@@ -665,7 +665,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listOfQuests:
-  - {fileID: 11400000, guid: 34811c143634d634796ffc2c8b6205ec, type: 2}
   - {fileID: 11400000, guid: 802bdb8026e4df84aa9206b4c6dc4d84, type: 2}
   - {fileID: 11400000, guid: 1b1c5370ac51fc544b161173541bfec0, type: 2}
   - {fileID: 11400000, guid: f156dbb91cb0e304b915163e60693476, type: 2}
@@ -2320,8 +2319,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1536549266}
   m_HandleRect: {fileID: 1536549265}
   m_Direction: 2
-  m_Value: 0.54545456
-  m_Size: 0.9999847
+  m_Value: 1
+  m_Size: 0.6729967
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

@@ -37,6 +37,21 @@ namespace CowMilking.Persistency
             PersistencyManager.Instance.Save();
         }
 
+        public void ResetQuestProgress(int questID, int goalID)
+        {
+            if (!QuestProgress.ContainsKey(questID))
+            {
+                QuestProgress.Add(questID, new());
+            }
+            if (!QuestProgress[questID].ContainsKey(goalID))
+            {
+                QuestProgress[questID].Add(goalID, 0);
+            }
+
+            QuestProgress[questID][goalID] = 0;
+            PersistencyManager.Instance.Save();
+        }
+
         public int GetQuestProgress(int questID, int goalID)
         {
             if (!QuestProgress.ContainsKey(questID) || !QuestProgress[questID].ContainsKey(goalID)) return 0;
