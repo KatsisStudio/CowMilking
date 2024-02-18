@@ -110,6 +110,14 @@ namespace CowMilking
                 _selectedData = null;
             }
         }
+
+        public void OnEscape(InputAction.CallbackContext value)
+        {
+            if (value.performed)
+            {
+                SceneManager.LoadScene("Farm");
+            }
+        }
     }
 
     public class SelectedData
