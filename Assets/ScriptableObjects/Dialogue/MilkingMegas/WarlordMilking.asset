@@ -16,10 +16,10 @@ MonoBehaviour:
   rightNameDefault: 
   leftSpriteDefault: {fileID: 0}
   rightSpriteDefault: {fileID: 0}
-  fullCGSpriteDefault: {fileID: 0}
+  fullCGSpriteDefault: {fileID: 21300000, guid: 90e10e6dfc009774b8a968fd6563c71a, type: 3}
   dialogues:
   - speakerName: 
-    speakerSprite: {fileID: 0}
+    speakerSprite: {fileID: 21300000, guid: 90e10e6dfc009774b8a968fd6563c71a, type: 3}
     onRight: 0
     fullScreen: 1
     sentences:
