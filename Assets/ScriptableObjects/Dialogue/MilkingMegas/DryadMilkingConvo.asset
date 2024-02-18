@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0267c7d2b651b0a4fab8d762f7eaa549, type: 3}
+  m_Name: DryadMilkingConvo
+  m_EditorClassIdentifier: 
+  leftNameDefault: 
+  rightNameDefault: 
+  leftSpriteDefault: {fileID: 0}
+  rightSpriteDefault: {fileID: 0}
+  fullCGSpriteDefault: {fileID: 21300000, guid: 10b800462569a364388496a4a2d76643, type: 3}
+  dialogues:
+  - speakerName: 
+    speakerSprite: {fileID: 21300000, guid: 10b800462569a364388496a4a2d76643, type: 3}
+    onRight: 0
+    fullScreen: 1
+    sentences:
+    - (You approach the Dryad Cow slowly, knowing they can be a bit tempermental)
+    - (As she notes your approach, her face turns to a dissatisfied put)
+    - (She turns her face away with a huff, but does not resist)
+    - (Despite her apparent dissatisfaction, her large and full breasts seem to perk
+      up a bit)
+    - (She squeeks with shock as your hands grab hold of her breasts, but her protests
+      last only a moment)
+    - (You work her breasts and nipples until thick sweet, sap-like milk spurts from
+      them into the waiting buckets)
+    - (The Dryad Cow melts into your hands, seeming to have no resistance left)
+    - (As you finish up, she seems to regain herself, and struts off in a huff)
+    dialogueEvent: {fileID: 0}
+  options: []
