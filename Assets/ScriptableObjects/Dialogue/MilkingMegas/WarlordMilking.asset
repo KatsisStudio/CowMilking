@@ -16,17 +16,32 @@ MonoBehaviour:
   rightNameDefault: 
   leftSpriteDefault: {fileID: 0}
   rightSpriteDefault: {fileID: 0}
-  fullCGSpriteDefault: {fileID: 21300000, guid: 90e10e6dfc009774b8a968fd6563c71a, type: 3}
+  fullCGSpriteDefault: {fileID: 21300000, guid: ce5bc0d444cf1a14c93710e4f72b7f26, type: 3}
   dialogues:
   - speakerName: 
-    speakerSprite: {fileID: 21300000, guid: 90e10e6dfc009774b8a968fd6563c71a, type: 3}
+    speakerSprite: {fileID: 21300000, guid: ce5bc0d444cf1a14c93710e4f72b7f26, type: 3}
     onRight: 0
     fullScreen: 1
     sentences:
     - (The large Warlord Cow marches, militarily, into the milking room)
-    - (Used to hierarchies, the Warlord cow understands it's purpose here, and gets
-      itself ready)
+    - (Used to ranks and orders, the Warlord cow understands it's purpose here, and
+      gets itself ready)
     - (It lays on the milking table that accommodates both it's large breasts, and
       large manhood)
+    - (You move below the table and are greeted by the interesting sight.)
+    - (Despite how filled with milk her breasts appear, Warlord Cows are somewhat
+      difficult to milk)
+    - (They require stimulation of both upper and lower body in order to produce
+      high quality milk.)
+    - (You warm your hands in a water bucket and set to work)
+    - (Gently stroking her cock with one hand, your other begins to stimulate her
+      nipples)
+    - (Grunts and Moos of appreciation can be heard above the table)
+    - (Soon milk is pouring into the milk bucket, and you must replace the bucket)
+    - (As you approach the end, her cock twitches as her entire body begins to shudder)
+    - (With an impressive burst milk erupts from both her nipples and her cock)
+    - (The buckets beneath her fill quickly, and soon overflow)
+    - (Once done, you collect the buckets, and leave the happy Warlord Cow to rest
+      on the table)
     dialogueEvent: {fileID: 0}
   options: []
