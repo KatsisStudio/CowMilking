@@ -17,5 +17,16 @@ MonoBehaviour:
   leftSpriteDefault: {fileID: 0}
   rightSpriteDefault: {fileID: 0}
   fullCGSpriteDefault: {fileID: 0}
-  dialogues: []
+  dialogues:
+  - speakerName: 
+    speakerSprite: {fileID: 0}
+    onRight: 0
+    fullScreen: 1
+    sentences:
+    - (The large Warlord Cow marches, militarily, into the milking room)
+    - (Used to hierarchies, the Warlord cow understands it's purpose here, and gets
+      itself ready)
+    - (It lays on the milking table that accommodates both it's large breasts, and
+      large manhood)
+    dialogueEvent: {fileID: 0}
   options: []
