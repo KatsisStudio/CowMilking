@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f142cac1125024c8eaaf5ffd40f592, type: 3}
   m_Name: Milk 5 Wood Cows
   m_EditorClassIdentifier: 
-  goalSummary: 
-  requiredAmount: 0
-  requiredElement: 0
+  goalSummary: Milk Wood Cows
+  requiredAmount: 5
+  requiredElement: 2
