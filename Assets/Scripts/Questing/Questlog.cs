@@ -9,11 +9,13 @@ namespace CowMilking.Questing
     {
         public static Questlog Instance { private set; get; }
 
+        public static bool QuestsInitialized = false;
+
         public List<Quest> listOfQuests;
 
         [SerializeField] private Transform contentZone;
 
-        
+
         [SerializeField] private QuestListObject questListObjectRef;
 
         //For QuestInfo
@@ -35,7 +37,10 @@ namespace CowMilking.Questing
         {
             foreach (Quest q in listOfQuests)
             {
-                q.Initialize();
+                //BUG: each time the farm is loaded, all quests are initialized as new versions of the same quest
+                //This increases the number of calls to a specific quest, messing up progression
+                if(!QuestsInitialized)
+                    q.Initialize();
 
                 GameObject lObject = Instantiate(questListObjectRef.listObject, contentZone);
                 QuestListObject qlObject = lObject.GetComponent<QuestListObject>();
@@ -44,19 +49,16 @@ namespace CowMilking.Questing
 
                 qlObject.nameText.text = q.questName;
 
-                if (q.questComplete)
-                    qlObject.statusText.text = "Completed";
-                else
-                    qlObject.statusText.text = "In Progress";
+                qlObject.statusText.text = "Completons: " + PersistencyManager.Instance.SaveData.GetQuestCompletionCount(q.questID).ToString();
 
                 lObject.GetComponent<RectTransform>().localPosition = new Vector2(lObject.GetComponent<RectTransform>().localPosition.x, -100 * questCounter + yOffset);
 
                 questCounter++;
 
-
-
                 lObject.SetActive(true);
             }
+
+            QuestsInitialized = true;
 
             this.gameObject.SetActive(false);
             questInfoPanel.SetActive(false);
@@ -71,7 +73,7 @@ namespace CowMilking.Questing
             questInfoName.text = q.questName;
             questInfoDescription.text = q.GetQuestDescription();
 
-            for(int i = 0; i < q.goals.Length; i++)
+            for (int i = 0; i < q.goals.Length; i++)
             {
                 var g = q.goals[i];
                 var amount = PersistencyManager.Instance.SaveData.GetQuestProgress(q.questID, g.goalID);

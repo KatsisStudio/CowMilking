@@ -15,11 +15,8 @@ namespace CowMilking.Questing
 
             base.Initialize(q, id);
 
-            //On init, check if this quest is already completed. If it isn't, subscribe
-            if (PersistencyManager.Instance.SaveData.GetQuestProgress(quest.questID, goalID) >= requiredAmount)
-                completed = true;
-            else
-                QuestEvents.OnAlienKilled += Increment;
+
+            QuestEvents.OnAlienKilled += Increment;
         }
 
         void Increment(CowInfo cinfo)
@@ -32,13 +29,6 @@ namespace CowMilking.Questing
 
             if (PersistencyManager.Instance.SaveData.GetQuestProgress(quest.questID, goalID) >= requiredAmount)
                 Complete();
-        }
-
-        public override void Complete()
-        {
-            QuestEvents.OnAlienKilled -= Increment;
-
-            base.Complete();
         }
 
         public override void ResetGoal()

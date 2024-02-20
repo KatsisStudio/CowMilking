@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f142cac1125024c8eaaf5ffd40f592, type: 3}
   m_Name: Mlik 5 Water Cows
   m_EditorClassIdentifier: 
-  goalSummary: Milk Metal Cows
+  goalSummary: Milk Water Cows
   requiredAmount: 5
   requiredElement: 1

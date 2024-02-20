@@ -30,4 +30,4 @@ MonoBehaviour:
   Damage: 3
   Color: {r: 0.8980392, g: 0.2509804, b: 0, a: 1}
   DelayBetweenBullets: 1
-  SlowDuration: 1
+  SlowDuration: 0

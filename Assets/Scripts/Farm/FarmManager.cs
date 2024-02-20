@@ -99,6 +99,7 @@ namespace CowMilking.Farm
 
         private IEnumerator Milk(FarmCowController cow)
         {
+            QuestEvents.Instance.MilkedACow(cow.Info);
             PersistencyManager.Instance.SaveData.Energy -= 50;
             PersistencyManager.Instance.Save();
             foreach (var e in _updatables)
@@ -133,8 +134,6 @@ namespace CowMilking.Farm
                 PersistencyManager.Instance.SaveData.OwnedCows.Add(cow.Info.Key);
                 PersistencyManager.Instance.Save();
             }
-
-            QuestEvents.Instance.MilkedACow(cow.Info);
         }
 
         class CowElementComparer : IEqualityComparer<CowInfo>

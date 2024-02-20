@@ -18,10 +18,12 @@ MonoBehaviour:
   Key: WOOD_2
   Name: Shortstack Cow
   Sprite: {fileID: 21300000, guid: 7fb944f6f0d0fb54b8e36b6be5a4ed51, type: 3}
-  BaseHealth: 5
+  BaseHealth: 12
   Element: 2
   IsStartingCow: 0
   NextCow: {fileID: 11400000, guid: 87a1102ff83eb18409a56842ff4b9271, type: 2}
+  Conversation: {fileID: 0}
+  FinalCG: {fileID: 0}
   EatGrass: 1
   DelayBetweenGrassEating: 0.25
   FireBullet: 0

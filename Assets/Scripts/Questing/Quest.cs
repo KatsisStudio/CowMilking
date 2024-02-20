@@ -98,6 +98,8 @@ namespace CowMilking.Questing
                 //TOAST message?
                 g.ResetGoal();
             }
+
+            PersistencyManager.Instance.SaveData.UpdateQuestCompletionCount(questID);
         }
 
         public string GetQuestDescription()

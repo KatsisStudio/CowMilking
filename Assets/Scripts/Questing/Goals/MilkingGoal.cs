@@ -14,32 +14,19 @@ namespace CowMilking.Questing
 
             base.Initialize(q, id);
 
-            if (PersistencyManager.Instance.SaveData.GetQuestProgress(quest.questID, goalID) >= requiredAmount)
-            {
-                completed = true;
-            }
-                
-            else
-                QuestEvents.OnCowMilked += Increment;
+            QuestEvents.OnCowMilked += Increment;
         }
 
         void Increment(CowInfo cinfo)
         {
             //If ElementType == none, can milk any cow.
-            if (requiredElement != ElementType.None  && cinfo.Element != requiredElement)
+            if (requiredElement != ElementType.None && cinfo.Element != requiredElement)
                 return;
 
             PersistencyManager.Instance.SaveData.UpdateQuestProgress(quest.questID, goalID);
 
             if (PersistencyManager.Instance.SaveData.GetQuestProgress(quest.questID, goalID) >= requiredAmount)
                 Complete();
-        }
-
-        public override void Complete()
-        {
-            QuestEvents.OnCowMilked -= Increment;
-
-            base.Complete();
         }
 
         public override void ResetGoal()

@@ -29,5 +29,5 @@ MonoBehaviour:
   FireBullet: 1
   Damage: 2
   Color: {r: 0.54668033, g: 0.568691, b: 0.6132076, a: 1}
-  DelayBetweenBullets: 2
+  DelayBetweenBullets: 3
   SlowDuration: 0
