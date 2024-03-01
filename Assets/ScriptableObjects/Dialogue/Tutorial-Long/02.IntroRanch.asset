@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0267c7d2b651b0a4fab8d762f7eaa549, type: 3}
+  m_Name: 02.IntroRanch
+  m_EditorClassIdentifier: 
+  leftNameDefault: Rancher Girl
+  rightNameDefault: 
+  leftSpriteDefault: {fileID: 0}
+  rightSpriteDefault: {fileID: 21300000, guid: a56d321e3f7a34845b4b4a2db43bd6b7, type: 3}
+  fullCGSpriteDefault: {fileID: 0}
+  dialogues:
+  - speakerName: Rancher Girl
+    speakerSprite: {fileID: 21300000, guid: a56d321e3f7a34845b4b4a2db43bd6b7, type: 3}
+    onRight: 1
+    fullScreen: 0
+    sentences:
+    - This is the ranch! Here you can keep an eye on our Cowgirls.
+    - Or at least, you would if we had any in at the moment.
+    - The one's I set out to pasture haven't come back yet.
+    - Bit strange that, it's almost time fer their milking!
+    - Guess I can show you how to get more to start us off then.
+    - Go ahead and click that TOWN over yonder.
+    dialogueEvent: {fileID: 0}
+  options: []

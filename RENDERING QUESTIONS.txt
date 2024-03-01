@@ -1,0 +1,25 @@
+RENDERING QUESTIONS
+
+1. What is the definition of a "Render"? Is there a difference between it and say a Color Illustration?
+
+2. What preparations are needed/helpful before beginning to render an image?
+
+3. What is something you'd say is the best thing to keep in mind while rendering an image?
+
+4. How do you create/load "textures" (i.e: dragon scales, dot textures, etc)
+
+5. Do renders always require texturing?
+
+6. How important is color theory in Rendering? Any tips, tricks, or "rules of thumb"?
+
+7. How much should you adhere to the color palette when shading? (like colors? black and whites?)
+
+8. Can you give examples of different color palettes that add different feels to a render? (i.e: warm colors, cold colors or shading, "pop" colors, etc)
+
+9. Are there any common pitfalls or traps someone can fall into when rendering?
+
+10. When/should you use solid black and white in rendering?
+
+11. Should lineart remain solid, or should it be colored and shaded to blend more with the rest of the image?
+
+12. If you could split the process of Rendering into phases, what would they be from beginning to end?

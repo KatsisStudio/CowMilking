@@ -12,6 +12,14 @@ namespace CowMilking.Persistency
         public Dictionary<int, Dictionary<int, int>> QuestProgress = new();
         public Dictionary<int, int> QuestCompletionCount = new();
 
+        //Will be used to track story progress
+        /// <summary>
+        /// 0 = Not done Tutorial
+        /// 1 = Tutorial Done
+        /// Incremeent through DialogueEvents
+        /// </summary>
+        public int StoryProgress = 0;
+
         public Dictionary<ElementType, int> Potions { set; get; } = new()
         {
             { ElementType.Fire, 1 }

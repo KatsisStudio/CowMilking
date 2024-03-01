@@ -1307,7 +1307,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.5
+  orthographic size: 2.25
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1780,7 +1780,6 @@ MonoBehaviour:
   _upgradePrefab: {fileID: 6374639157654459778, guid: cf9d2775d423ba249a055dac86149e79, type: 3}
   _milkingPreview: {fileID: 1201636026}
   _milkingCam: {fileID: 1056324883}
-  _cgBg: {fileID: 0}
 --- !u!4 &1649649202
 Transform:
   m_ObjectHideFlags: 0

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0267c7d2b651b0a4fab8d762f7eaa549, type: 3}
+  m_Name: 01.IntroTutorial
+  m_EditorClassIdentifier: 
+  leftNameDefault: Rancher Girl
+  rightNameDefault: 
+  leftSpriteDefault: {fileID: 0}
+  rightSpriteDefault: {fileID: 21300000, guid: a56d321e3f7a34845b4b4a2db43bd6b7, type: 3}
+  fullCGSpriteDefault: {fileID: 0}
+  dialogues:
+  - speakerName: Rancher Girl
+    speakerSprite: {fileID: 21300000, guid: a56d321e3f7a34845b4b4a2db43bd6b7, type: 3}
+    onRight: 1
+    fullScreen: 0
+    sentences:
+    - Well howdy! You must be the new guy. Pleasure ta make yer acquaintance!
+    - To be honest, it's a bit tough finding people who are interested in farming
+      these days.
+    - Not entirely sure why; it's good, honest, rewardin' work!
+    - Before you start though I gotta ask you a few interview questions.
+    - Standard procedure, plus it lets me get to know you a bit better!
+    - Let's get started.
+    - 'Which do you think is better: Attack, or Defense?'
+    dialogueEvent: {fileID: 0}
+  options:
+  - optionText: Attack
+    conversationPath: {fileID: 11400000, guid: af6f2856f70f545428470801683514e7, type: 2}
+  - optionText: Defense
+    conversationPath: {fileID: 11400000, guid: 0f43c46280da00e46bbb892d22b39290, type: 2}
